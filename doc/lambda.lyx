@@ -1,0 +1,2564 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{eurosym}
+\usepackage{mathrsfs}
+\usepackage[fleqn]{amsmath}
+\usepackage[Lenny]{fncychap}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{emptypage}
+%Create an empty page
+\def\emptypage@emptypage{ 
+\hbox{}
+\thispagestyle{empty}
+\newpage
+\if@twocolumn
+\hbox{}
+\newpage
+\fi
+}
+%Implement odd
+\DeclareOption{odd}{ 
+\def\cleardoublepage{
+\clearpage
+\if@twoside
+\ifodd\c@page
+% do nothing
+\else
+\emptypage@emptypage
+\fi
+\fi
+}
+}
+%Default to odd
+\ExecuteOptions{odd}
+\ProcessOptions
+
+\usepackage{minitoc}
+
+\usepackage[toc,page]{appendix}
+\usepackage{bookmark}
+%\bookmarksetup{open,numbered}
+
+\hyphenation{La-zar-czyk}
+%color tablas
+\usepackage[table]{xcolor}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman utopia
+\font_sans helvet
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command default
+\index_command default
+\paperfontsize 10
+\spacing single
+\use_hyperref true
+\pdf_bookmarks false
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref section
+\pdf_pdfusetitle false
+\pdf_quoted_options "hidelinks"
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 0
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation landscape
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 2.5cm
+\rightmargin 2.5cm
+\bottommargin 2.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip bigskip
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%formato de la pagina
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyhead{}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyhead[CE]{
+\backslash
+small 
+\backslash
+nouppercase 
+\backslash
+leftmark}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyhead[CO]{
+\backslash
+small 
+\backslash
+nouppercase 
+\backslash
+rightmark}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyfoot[CE,CO]{
+\backslash
+small 
+\backslash
+thepage}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+headrulewidth}{0.6pt}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+footrulewidth}{0.6pt}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancypagestyle{plain}{
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fancyhf{}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fancyfoot[CE,CO]{
+\backslash
+small 
+\backslash
+thepage}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+renewcommand{
+\backslash
+headrulewidth}{0pt}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+renewcommand{
+\backslash
+footrulewidth}{0.6pt}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%tabla de contenido por capitulo 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+dominitoc
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{minitocdepth}{3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%prefacio, prologo
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frontmatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%documento principal
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+mainmatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Documentación Modelo Lambda
+\end_layout
+
+\begin_layout Section
+Índices 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $pe$
+\end_inset
+
+ Periodos 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $st,\ st2$
+\end_inset
+
+ Estados
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $gt$
+\end_inset
+
+ Grupos térmicos
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $gh,\ gh2$
+\end_inset
+
+ Grupos hidráulicos
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $em$
+\end_inset
+
+ Empresas
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $amv$
+\end_inset
+
+ Agentes marginalistas de venta
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $amc$
+\end_inset
+
+ Agentes marginalistas de compra
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $nd,\ nd2$
+\end_inset
+
+ Nodos de la red de transmisión
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $d\_st1$
+\end_inset
+
+ Características de los estados
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $d\_em1$
+\end_inset
+
+ Cuotas mínimas de producción de las empresa
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $d\_gt1$
+\end_inset
+
+ Características de los grupos térmicos
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $d\_gt2$
+\end_inset
+
+ Costos de los grupos térmicos
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $d\_gt3$
+\end_inset
+
+ Energía máxima y mínima de los grupos térmicos
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $d\_gh1$
+\end_inset
+
+ Características de los grupos hidráulicos
+\end_layout
+
+\begin_layout Section
+Modelado de las características temporales 
+\end_layout
+
+\begin_layout Subsection
+Elementos de los conjuntos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+d_st1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Características de los estados
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+st_ini
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Estado inicial 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+st_fin
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Estado final
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Parámetros
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 0000000000000000000
+\begin_inset Formula $\text{DUR\_PS}_{pe,st}$
+\end_inset
+
+ Duración de los estados 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 0000000000000000000
+\begin_inset Formula $\text{TRAN\_PSS}_{pe,st,st2}$
+\end_inset
+
+ Transición entre el estado st y st2
+ 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 0000000000000000000
+\noindent
+\begin_inset Formula $\text{CARAC\_PS}_{pe,st,d\_st1}$
+\end_inset
+
+ Características de los estados 
+
+\end_layout
+
+\begin_layout Section
+Modelado de las empresas 
+\end_layout
+
+\begin_layout Subsection
+Elementos de los conjuntos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+d_em1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Cuotas mínimas de producción de las empresa
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+em_cuotamin
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cuota mínima (%) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+em_pmin
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Producción mínima (MW)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Parámetros
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\noindent
+\begin_inset Formula $\text{EM\_THETA\_PS}_{em,pe,st}$
+\end_inset
+
+ Variación conjetural del precio del sistema respecto a la producción de
+ la empresa en el periodo y estado
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\noindent
+\begin_inset Formula $\text{EM\_CBILPOT\_PS}_{em,pe,st}$
+\end_inset
+
+ Potencia de los contratos bilaterales de la empresa en el periodo y estado
+ 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\noindent
+\begin_inset Formula $\text{EM\_CDIFPOT\_PS}_{em,pe,st}$
+\end_inset
+
+ Potencia de los contratos por diferencias de la empresa en el periodo y
+ estado 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\noindent
+\begin_inset Formula $\text{EM\_CUOTA}_{em,d\_em1}$
+\end_inset
+
+ Cuota mínima de producción de la empresa 
+
+\end_layout
+
+\begin_layout Section
+Modelado de los grupos térmicos
+\end_layout
+
+\begin_layout Subsection
+Elementos de los conjuntos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+d_gt1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Características de los grupos térmicos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gt_pmax
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Potencia máxima (MW)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gt_pmin
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Potencia mínima (MW)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gt_aco_ini
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Acoplamiento inicial 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+d_gt2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Costos de los grupos térmicos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gt_cvacio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Costo de vacío ($/MWh) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gt_carr
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Costo de arranque ($)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gt_cpar
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Costo de parada ($)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+d_gt3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Energía máxima y mínima de los grupos térmicos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gt_emin
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Energía mínima (MWh)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gt_emax
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Energía máxima (MWh)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Parámetros
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\noindent
+\begin_inset Formula $\text{GT\_CARAC}_{gt,d\_gt1}$
+\end_inset
+
+ Características del grupo térmico 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\begin_inset Formula $\text{GT\_COSTOS}_{gt,d\_gt2}$
+\end_inset
+
+ Costos del grupo térmico 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\begin_inset Formula $\text{GT\_CVAR\_P}_{gt,pe}$
+\end_inset
+
+ Costo variable del grupo térmico por periodo
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\begin_inset Formula $\text{GT\_COEFDISP\_P}_{gt,pe}$
+\end_inset
+
+ Coeficiente de disponibilidad del grupo térmico por periodo
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\begin_inset Formula $\text{GT\_EMAX\_P}_{gt,pe}$
+\end_inset
+
+ Energía máxima que debe producir el grupo por periodo 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\begin_inset Formula $\text{GT\_EMIN\_P}_{gt,pe}$
+\end_inset
+
+ Energía mínima que debe producir el grupo por periodo 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\begin_inset Formula $\text{GT\_ENER}_{gt,d\_gt3}$
+\end_inset
+
+ Energía máxima y mínima que debe producir el grupo a lo largo de todo el
+ horizonte 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\begin_inset Formula $\text{GT\_PERT\_EM}_{gt,em}$
+\end_inset
+
+ Pertenencia del grupo térmico a la empresa 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\noindent
+\begin_inset Formula $\text{GT\_LOCA\_ND}_{gt,nd}$
+\end_inset
+
+ Localización del grupo (1 si esta en el nodo 
+\begin_inset Formula $nd$
+\end_inset
+
+, 0 en otro caso) 
+
+\end_layout
+
+\begin_layout Section
+Modelado de los grupos 
+\series bold
+hidráulicos
+\end_layout
+
+\begin_layout Subsection
+Elementos de los conjuntos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+d_gh1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Características de los grupos hidráulicos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gh_upmaxres
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Término constante de la relación potencia máxima-reserva (MW)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gh_vpamxres
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Término lineal de la relación potencia máxima-reserva (MW/MWh)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gh_rendturbom
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rendimiento completo del ciclo turbinación-bombeo (p.u.)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gh_rini
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reservas iniciales (MWh)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gh_rfin
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reservas finales (MWh)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Parámetros
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\noindent
+\begin_inset Formula $\text{GH\_CARAC}_{gh,d\_gh1}$
+\end_inset
+
+ Características del grupo térmico 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\begin_inset Formula $\text{GH\_APOR\_P}_{gh,pe}$
+\end_inset
+
+ Aportaciones hídricas al grupo hidráulico por periodo 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\begin_inset Formula $\text{GH\_BMAX\_P}_{gh,pe}$
+\end_inset
+
+ Potencia máxima de bombeo del grupo hidráulico por periodo 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\begin_inset Formula $\text{GH\_POBLI\_P}_{gh,pe}$
+\end_inset
+
+ Producción mínima obligada del grupo hidráulico por periodo 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\begin_inset Formula $\text{GH\_RMAX\_P}_{gh,pe}$
+\end_inset
+
+ Reserva máxima del grupo hidráulico por periodo 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\begin_inset Formula $\text{GH\_RMIN\_P}_{gh,pe}$
+\end_inset
+
+ Reserva mínima del grupo hidráulico por periodo 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\begin_inset Formula $\text{GH\_PERT\_EM}_{gh,em}$
+\end_inset
+
+ Pertenencia del grupo hidráulico a la empresa 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\noindent
+\begin_inset Formula $\text{GH\_SUP\_GH}_{gh,gh2}$
+\end_inset
+
+ Sistemas hidráulicos inmediatamente superiores 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000
+\noindent
+\begin_inset Formula $\text{GH\_LOCA\_ND}_{gh,nd}$
+\end_inset
+
+ Localización del grupo (1 si esta en el nodo 
+\begin_inset Formula $nd$
+\end_inset
+
+, 0 en otro caso) 
+
+\end_layout
+
+\begin_layout Section
+Modelado de los agentes marginalistas
+\end_layout
+
+\begin_layout Subsection
+Parámetros
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000000
+\noindent
+\begin_inset Formula $\text{AMV\_OFERPCIO\_PS}_{amv,pe,st}$
+\end_inset
+
+ Precio de generación ofertado por el amv por periodo y estado 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000000
+\begin_inset Formula $\text{AMV\_OFERPOT\_PS}_{amv,pe,st}$
+\end_inset
+
+ Generación ofertada por el amv por periodo y estado 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000000
+\noindent
+\begin_inset Formula $\text{AMC\_OFERPCIO\_PS}_{amc,pe,st}$
+\end_inset
+
+ Precio de demanda ofertado por el amc por periodo y estado 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000000
+\begin_inset Formula $\text{AMC\_OFERPOT\_PS}_{amc,pe,st}$
+\end_inset
+
+ Demanda ofertada por el amc por periodo y estado 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000000
+\begin_inset Formula $\text{AMV\_LOCA\_ND}_{amv,nd}$
+\end_inset
+
+ Localización del agente marginalista (1 si esta en el nodo 
+\begin_inset Formula $nd$
+\end_inset
+
+, 0 en otro caso) 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00000000000000000000000000
+\noindent
+\begin_inset Formula $\text{AMC\_LOCA\_ND}_{amc,nd}$
+\end_inset
+
+ Localización del agente marginalista (1 si esta en el nodo 
+\begin_inset Formula $nd$
+\end_inset
+
+, 0 en otro caso) 
+
+\end_layout
+
+\begin_layout Section
+Modelado de la demanda y de la red
+\end_layout
+
+\begin_layout Subsection
+Parámetros
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000000
+\noindent
+\begin_inset Formula $\text{RED\_REAC}_{nd,nd2}$
+\end_inset
+
+ Reactancia de la linea entre los nodos 
+\begin_inset Formula $nd$
+\end_inset
+
+ y 
+\begin_inset Formula $nd2$
+\end_inset
+
+ 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000000
+\noindent
+\begin_inset Formula $\text{DEM\_COSTOENENOSUM}$
+\end_inset
+
+ Costo de la energía no suministrada 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000000
+\begin_inset Formula $\text{DEM\_ORD\_PS}_{pe,st}$
+\end_inset
+
+ Ordenada en el origen de la potencia demandada en el periodo y estado 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000000
+\begin_inset Formula $\text{DEM\_PEN\_PS}_{pe,st}$
+\end_inset
+
+ Pendiente de la potencia demandada en el periodo y estado 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000000
+\begin_inset Formula $\text{DEM\_ORD\_NPS}_{nd,pe,st}$
+\end_inset
+
+ Ordenada en el origen de la potencia demandada en el periodo y estado por
+ nodo 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000000
+\noindent
+\begin_inset Formula $\text{DEM\_PEN\_NPS}_{nd,pe,st}$
+\end_inset
+
+ Pendiente de la potencia demandada en el periodo y estado por nodo 
+
+\end_layout
+
+\begin_layout Section
+Opciones de ejecución
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+OPT_DEM Opción de demanda 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+0 Demanda Inelástica
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+1 Demanda Elástica 
+\end_layout
+
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+OPT_EQUI Opción de tipo de equilibrio
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+0 Competencia perfecta
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+1 Variación conjetural 
+\end_layout
+
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+OPT_ENT Opción de tipos de variables
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+0 Relajadas
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+1 Enteras 
+\end_layout
+
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+OPT_RED Opción de red
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+0 Sin red
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+1 Con red 
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Variables de decisión
+\end_layout
+
+\begin_layout Subsection
+Costos
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\begin_inset Formula $C\_FO\_TOT$
+\end_inset
+
+	 Costo total 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\begin_inset Formula $C\_FO\_CARR$
+\end_inset
+
+ Costos totales de arranque 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\noindent
+\begin_inset Formula $C\_FO\_CPAR$
+\end_inset
+
+ Costos totales de parada 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\begin_inset Formula $C\_FO\_CVACIO$
+\end_inset
+
+ Costos totales de vacío 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\begin_inset Formula $C\_FO\_CVAR$
+\end_inset
+
+ Costos totales variables 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\begin_inset Formula $C\_FO\_AM$
+\end_inset
+
+ Ingresos y costos totales de los agentes marginalistas 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\noindent
+\begin_inset Formula $C\_FO\_CENS$
+\end_inset
+
+ Costo total de la energía no suministrada 
+
+\end_layout
+
+\begin_layout Subsection
+Empresas
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\noindent
+\begin_inset Formula $EM\_POT\_PS_{em,pe,st}$
+\end_inset
+
+ Potencia producida por la empresa en el periodo y estado
+\end_layout
+
+\begin_layout Subsection
+Grupos térmicos
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\noindent
+\begin_inset Formula $GT\_POT\_PS_{gt,pe,st}$
+\end_inset
+
+ Potencia producida por el grupo térmico en el periodo y estado 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\begin_inset Formula $GT\_ARR\_PSS_{gt,pe,st,st2}$
+\end_inset
+
+ Decisión de arranque del grupo térmico del estado 
+\begin_inset Formula $st$
+\end_inset
+
+ al estado 
+\begin_inset Formula $st2$
+\end_inset
+
+ 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\noindent
+\begin_inset Formula $GT\_PAR\_PSS_{gt,pe,st,st2}$
+\end_inset
+
+ Decisión de parada del grupo térmico del estado 
+\begin_inset Formula $st$
+\end_inset
+
+ al estado 
+\begin_inset Formula $st2$
+\end_inset
+
+ 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\begin_inset Formula $GT\_ARR\_P_{gt,pe}$
+\end_inset
+
+ Decisión de arranque del grupo térmico al inicio del periodo 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\begin_inset Formula $GT\_PAR\_P_{gt,pe}$
+\end_inset
+
+ Decisión de parada del grupo térmico al inicio del periodo 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\noindent
+\begin_inset Formula $GT\_ACO\_PS_{gt,pe,st}$
+\end_inset
+
+ Estado de acoplamiento del grupo en periodo y estado 
+\end_layout
+
+\begin_layout Subsection
+Grupos hidráulicos
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\begin_inset Formula $GH\_POT\_PS_{gh,pe,st}$
+\end_inset
+
+ Potencia turbinada por el grupo hidráulico en el periodo y estado 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\noindent
+\begin_inset Formula $GH\_BOM\_PS_{gh,pe,st}$
+\end_inset
+
+ Potencia bombeada por el grupo hidráulico en el periodo y estado 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\begin_inset Formula $GH\_VE\_P_{gh,pe}$
+\end_inset
+
+ Energía vertida por el grupo hidráulico en el p 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\begin_inset Formula $GH\_RES\_P_{gh,pe}$
+\end_inset
+
+ Reservas del grupo hidráulico al final del p 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\noindent
+\begin_inset Formula $GH\_EQUI\_P_{gh,pe}$
+\end_inset
+
+ Equivalente de la energía total del grupo hidráulico 
+
+\end_layout
+
+\begin_layout Subsection
+Agentes marginalistas
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\noindent
+\begin_inset Formula $AMV\_POT\_PS_{amv,pe,st}$
+\end_inset
+
+ Potencia de generación aceptada a un amv en el periodo y estado 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\noindent
+\begin_inset Formula $AMC\_POT\_PS_{amc,pe,st}$
+\end_inset
+
+ Demanda aceptada a un amc en el periodo y estado 
+
+\end_layout
+
+\begin_layout Subsection
+Demanda
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\noindent
+\begin_inset Formula $DEM\_PS_{pe,st}$
+\end_inset
+
+ Demanda de potencia en el periodo y estado 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\begin_inset Formula $DNS\_PS_{pe,st}$
+\end_inset
+
+ Potencia no suministrada por periodo y estado 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\begin_inset Formula $DEM\_NPS_{nd,pe,st}$
+\end_inset
+
+ Demanda de potencia en el periodo y estado por nodo 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\begin_inset Formula $DEM\_CBILPOT\_NPS_{nd,pe,st}$
+\end_inset
+
+ Potencia de los contratos bilaterales en cada nodo 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\noindent
+\begin_inset Formula $DNS\_NPS_{nd,pe,st}$
+\end_inset
+
+ Potencia no suministrada por periodo y estado por nodo 
+
+\end_layout
+
+\begin_layout Subsection
+Red
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\noindent
+\begin_inset Formula $RED\_ANG_{nd,pe,st}$
+\end_inset
+
+ Angulo en el nodo por periodo y estado 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 000000000000000000000
+\begin_inset Formula $RED\_FLX_{nd,nd2,pe,st}$
+\end_inset
+
+ Flujo entre nodos 
+\begin_inset Formula $nd$
+\end_inset
+
+ y 
+\begin_inset Formula $nd2$
+\end_inset
+
+ por periodo y estado 
+
+\end_layout
+
+\begin_layout Section
+Ecuaciones
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_FO\_TOT}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Función objetivo
+\begin_inset Formula 
+\begin{align*}
+ & C\_FO\_TOT\\
+ & =\\
+ & C\_FO\_CARR+C\_FO\_CPAR+C\_FO\_CVACIO+C\_FO\_CVAR+C\_FO\_AM+C\_FO\_CENS\\
+\\
+ & +\sum_{em,pe,st}\biggl\{\frac{1}{2}\cdot\textcolor{black}{\text{DUR\_PS}}_{pe,st}\cdot\textcolor{black}{\text{EM\_THETA\_PS}}_{em,pe,st}\cdot\Bigl(EM\_POT\_PS_{em,pe,st}-EM\_CBILPOT\_PS_{em,pe,st}-EM\_CDIFPOT\_PS_{em,pe,st}\Bigr)^{2}\biggr\}\Biggl|_{\textcolor{black}{\text{OPT\_EQUI}}=1}\\
+ & -{\displaystyle \sum_{pe,st}\biggl\{\frac{\textcolor{black}{\text{DUR\_PS}}_{pe,st}}{\textcolor{black}{\text{DEM\_PEN\_PS}}_{pe,st}}\cdot\Bigl(\textcolor{black}{\text{DEM\_ORD\_PS}}_{pe,st}\cdot DEM\_PS_{pe,st}}-\frac{1}{2}\cdot DEM\_PS_{pe,st}^{2}\Bigr)\biggr\}\Biggl|_{(\textcolor{black}{\text{OPT\_DEM}}=1)\wedge(\textcolor{black}{\text{OPT\_RED}}=0)}\\
+ & -{\displaystyle \sum_{nd,pe,st}\biggl\{\frac{\textcolor{black}{\text{DUR\_PS}}_{pe,st}}{\textcolor{black}{\text{DEM\_PEN\_NPS}}_{nd,pe,st}}\cdot\Bigl(\textcolor{black}{\text{DEM\_ORD\_NPS}}_{nd,pe,st}\cdot DEM\_NPS_{nd,pe,st}}-\frac{1}{2}\cdot DEM\_NPS_{nd,pe,st}^{2}\Bigr)\biggr\}\Biggl|_{(\textcolor{black}{\text{OPT\_DEM}}=1)\wedge(\textcolor{black}{\text{OPT\_RED}}=1)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_FO\_CARR}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Costos de arranque
+\begin_inset Formula 
+\begin{align*}
+ & {\displaystyle C\_FO\_CARR}\\
+ & =\\
+ & \sum_{gt}\biggl\{\textcolor{black}{\text{GT\_COSTOS}}_{gt,\texttt{gt\_carr}}\cdot\Bigl({\displaystyle \sum_{pe,st,st2|_{st\neq st2}}(\textcolor{black}{\text{TRAN\_PSS}}_{pe,st,st2}\cdot GT\_ARR\_PSS_{gt,pe,st,st2})+{\displaystyle \sum_{pe}GT\_ARR\_P_{gt,pe}\Bigr)\biggr\}}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_FO\_CPAR}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Costos de parada
+\begin_inset Formula 
+\begin{align*}
+ & {\displaystyle C\_FO\_CPAR}\\
+ & =\\
+ & \sum_{gt}\biggl\{\textcolor{black}{\text{GT\_COSTOS}}_{gt,\texttt{gt\_cpar}}\cdot\Bigl({\displaystyle \sum_{pe,st,st2|_{st\neq st2}}(\textcolor{black}{\text{TRAN\_PSS}}_{pe,st,st2}\cdot GT\_PAR\_PSS_{gt,pe,st,st2})+{\displaystyle \sum_{pe}GT\_PAR\_P_{gt,pe}\Bigr)\biggr\}}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_FO\_CVACIO}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Costos de vacío
+\begin_inset Formula 
+\begin{align*}
+ & {\displaystyle C\_FO\_CVACIO}\\
+ & =\\
+ & \sum_{gt,pe,st}\Bigl(\textcolor{black}{\text{GT\_COSTOS}}_{gt,\texttt{gt\_cvacio}}\cdot\textcolor{black}{\text{DUR\_PS}}_{pe,st}\cdot GT\_ACO\_PS_{gt,pe,st}\Bigr)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_FO\_CVAR}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Costos variables
+\begin_inset Formula 
+\begin{align*}
+ & C\_FO\_CVAR\\
+ & =\\
+ & {\displaystyle \sum_{gt,pe,st}\Bigl(\textcolor{black}{\text{GT\_CVAR\_P}}_{gt,pe}\cdot\textcolor{black}{\text{DUR\_PS}}_{pe,st}\cdot GT\_POT\_PS_{gt,pe,st}\Bigr)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_FO\_AM}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ingresos y costos de los agentes marginalistas
+\begin_inset Formula 
+\begin{align*}
+ & C\_FO\_AM\\
+ & =\\
+ & \sum_{amv,pe,st}\Bigl(\textcolor{black}{\text{DUR\_PS}}_{pe,st}\cdot\textcolor{black}{\text{AMV\_OFERPCIO\_PS}}_{amv,pe,st}\cdot AMV\_POT\_PS_{amv,pe,st}\Bigr)\\
+ & -{\displaystyle \sum_{amc,pe,st}\Bigl(\textcolor{black}{\text{DUR\_PS}}_{pe,st}\cdot\textcolor{black}{\text{AMC\_OFERPCIO\_PS}}_{amc,pe,st}\cdot AMC\_POT\_PS_{amc,pe,st}\Bigr)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_FO\_CENS}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Costo de la energía no suministrada
+\begin_inset Formula 
+\begin{align*}
+ & C\_FO\_CENS\\
+ & =\\
+ & \sum_{pe,st}\Bigl(\textcolor{black}{\text{DUR\_PS}}_{pe,st}\cdot\textcolor{black}{\text{DEM\_COSTOENENOSUM}}\cdot DNS\_PS_{pe,st}\Bigr)
+\end{align*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_DEM\_BALPOT\_PS}_{pe,st}\biggl|_{\textcolor{black}{\text{OPT\_RED}}=0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Balance de potencia por periodo y estado
+\begin_inset Formula 
+\begin{align*}
+ & \sum_{gt}GT\_POT\_PS_{gt,pe,st}+\sum_{gh}GH\_POT\_PS_{gh,pe,st}+\sum_{amv}AMV\_POT\_PS_{amv,pe,st}\\
+ & =\\
+ & DEM\_PS_{pe,st}+\sum_{em}EM\_CBILPOT\_PS_{em,pe,st}+\sum_{gh}GH\_BOM\_PS_{gh,pe,st}+\sum_{amc}AMC\_POT\_PS_{amc,pe,st}+DNS\_PS_{pe,st}\qquad\forall{pe,st}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_DEM\_BALPOT\_NPS}_{nd,pe,st}\biggl|_{\textcolor{black}{\text{OPT\_RED}}=1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Balance de potencia en cada nodo por periodo y estado
+\begin_inset Formula 
+\begin{align*}
+ & \sum_{gt|_{\textcolor{black}{\text{GT\_LOCA\_ND}}_{gt,nd}}}GT\_POT\_PS_{gt,pe,st}+\sum_{gh|_{\textcolor{black}{\text{GH\_LOCA\_ND}}_{gh,nd}}}GH\_POT\_PS_{gh,pe,st}+\sum_{amv|_{\textcolor{black}{\text{AMV\_LOCA\_ND}}_{amv,nd}}}AMV\_POT\_PS_{amv,pe,st}\\
+ & =\\
+ & DEM\_NPS_{nd,pe,st}+DEM\_CBILPOT\_NPS_{nd,pe,st}+\sum_{nd2|_{nd\neq nd2}}RED\_FLX_{nd,nd2,pe,st}\\
+ & +{\displaystyle \sum_{gh|_{\textcolor{black}{\text{GH\_LOCA\_ND}}_{gh,nd}}}GH\_BOM\_PS_{gh,pe,st}+{\displaystyle \sum_{amc|_{\textcolor{black}{\text{AMC\_LOCA\_ND}}_{amc,nd}}}AMC\_POT\_PS_{amc,pe,st}+DNS\_NPS_{nd,pe,st}}}\qquad\forall{nd,pe,st}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_DEM\_CBILPOT\_PS}_{pe,st}\biggl|_{\textcolor{black}{\text{OPT\_RED}}=1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Balance de los contratos bilaterales
+\begin_inset Formula 
+\begin{align*}
+{\displaystyle } & \sum_{nd}DEM\_CBILPOT\_NPS_{nd,pe,st}\\
+ & =\\
+ & \sum_{em}EM\_CBILPOT\_PS_{em,pe,st}\qquad\forall{pe,st}
+\end{align*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_RED\_FLUJO}_{nd,nd2,pe,st}\biggl|_{(\textcolor{black}{\text{OPT\_RED}}=1)\wedge(nd\neq nd2)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Flujo entre los nodos 
+\begin_inset Formula $nd$
+\end_inset
+
+ y 
+\begin_inset Formula $nd2$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+ & RED\_FLX_{nd,nd2,pe,st}\\
+ & =\\
+ & \textcolor{black}{\text{RED\_REAC}}_{nd,nd2}\cdot\Bigl(RED\_ANG_{nd,pe,st}-RED\_ANG_{nd2,pe,st}\Bigr)\qquad\forall{nd,nd2,pe,st}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_EM\_CUOTA}_{em}\biggl|_{\textcolor{black}{\text{EM\_CUOTA}}_{em,\texttt{em\_cuotamin}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Restricción de cuota mínima de la empresa 
+\begin_inset Formula 
+\begin{align*}
+ & \sum_{pe,st}\Bigl(\textcolor{black}{\text{DUR\_PS}}_{pe,st}\cdot EM\_POT\_PS_{em,pe,st}\Bigr)\\
+ & \geq\\
+ & \textcolor{black}{\text{EM\_CUOTA}}_{em,\texttt{em\_cuotamin}}\cdot{\displaystyle \sum_{pe,st}\Bigl(\textcolor{black}{\text{DUR\_PS}}_{pe,st}\cdot DEM\_PS_{pe,st}\Bigr)\qquad\forall em}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_EM\_POT\_PS}_{em,pe,st}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Potencia total de la empresa
+\begin_inset Formula 
+\begin{align*}
+ & EM\_POT\_PS_{em,pe,st}\\
+ & =\\
+ & \sum_{gt}\Bigl(\textcolor{black}{\text{GT\_PERT\_EM}}_{gt,em}\cdot GT\_POT\_PS_{gt,pe,st}\Bigr)+{\displaystyle \sum_{gh}\Bigl(\textcolor{black}{\text{GH\_PERT\_EM}}_{gh,em}\cdot\bigl(GH\_POT\_PS_{gh,pe,st}-GH\_BOM\_PS_{gh,pe,st}\bigr)\Bigr)}\qquad\forall{em,pe,st}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_GT\_PMIN\_PS}_{gt,pe,st}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Restricción de potencia mínima del grupo térmico
+\begin_inset Formula 
+\begin{align*}
+ & GT\_POT\_PS_{gt,pe,st}\\
+ & \geq\\
+ & \textcolor{black}{\text{GT\_CARAC}}_{gt,\texttt{gt\_pmin}}\cdot\textcolor{black}{\text{GT\_COEFDISP\_P}}_{gt,pe}\cdot GT\_ACO\_PS_{gt,pe,st}\qquad\forall{gt,pe,st}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_GT\_PMAX\_PS}_{gt,pe,st}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Restricción de potencia máxima del grupo térmico
+\begin_inset Formula 
+\begin{align*}
+ & GT\_POT\_PS_{gt,pe,st}\\
+ & \leq\\
+ & \textcolor{black}{\text{GT\_CARAC}}_{gt,\texttt{gt\_pmax}}\cdot\textcolor{black}{\text{GT\_COEFDISP\_P}}_{gt,pe}\cdot GT\_ACO\_PS_{gt,pe,st}\qquad\forall{gt,pe,st}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_GT\_EMIN\_P}_{gt,pe}\biggl|_{\textcolor{black}{\text{GT\_EMIN\_P}}_{gt,pe}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Restricción de energía mínima del grupo térmico por periodo
+\begin_inset Formula 
+\begin{align*}
+ & \sum_{st}\Bigl(\textcolor{black}{\text{DUR\_PS}}_{pe,st}\cdot GT\_POT\_PS_{gt,pe,st}\Bigr)\\
+ & \geq\\
+ & \textcolor{black}{\text{GT\_EMIN\_P}}_{gt,pe}\qquad\forall{gt,pe}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_GT\_EMAX\_P}_{gt,pe}\biggl|_{\textcolor{black}{\text{GT\_EMAX\_P}}_{gt,pe}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Restricción de energía máxima del grupo térmico por periodo
+\begin_inset Formula 
+\begin{align*}
+ & \sum_{st}\Bigl(\textcolor{black}{\text{DUR\_PS}}_{pe,st}\cdot GT\_POT\_PS_{gt,pe,st}\Bigr)\\
+ & \leq\\
+ & \textcolor{black}{\text{GT\_EMAX\_P}}_{gt,pe}\qquad\forall{gt,pe}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_GT\_ARRPAR\_PSS}_{gt,pe,st,st2}\biggl|_{st\neq st2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Restricción de arranque y parada del grupo térmico entre estados del periodo
+\begin_inset Formula 
+\begin{align*}
+ & GT\_ARR\_PSS_{gt,pe,st,st2}-GT\_PAR\_PSS_{gt,pe,st,st2}\\
+ & =\\
+ & GT\_ACO\_PS_{gt,pe,st2}-GT\_ACO\_PS_{gt,pe,st}\qquad\forall{gt,pe,st,st2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_GT\_ARRPAR\_P}_{gt,pe}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Restricción de arranque y parada al inicio del periodo 
+\begin_inset Formula 
+\begin{align*}
+ & GT\_ARR\_P_{gt,pe}-GT\_PAR\_P_{gt,pe}\\
+ & =\\
+ & {\displaystyle \sum_{st|_{\textcolor{black}{\text{CARAC\_PS}}_{pe,st,\texttt{st\_ini}}}}GT\_ACO\_PS_{gt,pe,st}-{\displaystyle \sum_{st|_{\textcolor{black}{\text{CARAC\_PS}}_{pe-1,st,\texttt{st\_fin}}}}GT\_ACO\_PS_{gt,pe-1,st}\Biggl|_{pe>1}-\textcolor{black}{\text{GT\_CARAC}}_{gt,\texttt{gt\_aco\_ini}}\Biggl|_{pe=1}}}\qquad\forall{gt,pe}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_GT\_ETMIN}_{gt}\biggl|_{\textcolor{black}{\text{GT\_ENER}}_{gt,\texttt{gt\_emin}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Restricción de energía mínima total producida por el grupo térmico
+\begin_inset Formula 
+\begin{align*}
+ & {\displaystyle \sum_{pe,st}\Bigl(\textcolor{black}{\text{DUR\_PS}}_{pe,st}\cdot GT\_POT\_PS_{gt,pe,st}\Bigr)}\\
+ & \geq\\
+ & \textcolor{black}{\text{GT\_ENER}}_{gt,\texttt{gt\_emin}}\qquad\forall gt
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_GT\_ETMAX}_{gt}\biggl|_{\textcolor{black}{\text{GT\_ENER}}_{gt,\texttt{gt\_emax}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Restricción de energía máxima total producida por el grupo térmico
+\begin_inset Formula 
+\begin{align*}
+ & {\displaystyle \sum_{pe,st}\Bigl(\textcolor{black}{\text{DUR\_PS}}_{pe,st}\cdot GT\_POT\_PS_{gt,pe,st}\Bigr)}\\
+ & \leq\\
+ & \textcolor{black}{\text{GT\_ENER}}_{gt,\texttt{gt\_emax}}\qquad\forall gt
+\end{align*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_GH\_BALHID\_P}_{gh,pe}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Balance hidráulico por periodo
+\begin_inset Formula 
+\begin{align*}
+ & GH\_RES\_P_{gh,pe}-GH\_RES\_P_{gh,pe-1}\Biggl|_{pe>1}-\textcolor{black}{\text{GH\_CARAC}}_{gh,\texttt{gh\_rini}}\Biggl|_{pe=1}\\
+ & =\\
+ & \textcolor{black}{\text{GH\_APOR\_P}}_{gh,pe}+{\displaystyle \sum_{gh2|_{\textcolor{black}{\text{GH\_SUP\_GH}}_{gh2,gh}}}\Bigl(\textcolor{black}{\text{GH\_SUP\_GH}}_{gh2,gh}\cdot GH\_EQUI\_P_{gh2,pe}\Bigr)-GH\_EQUI\_P_{gh,pe}\qquad\forall{gh,pe}}
+\end{align*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_GH\_EQUI\_P}_{gh,pe}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Energía total equivalente del grupo hidráulico por periodo
+\begin_inset Formula 
+\begin{align*}
+ & GH\_EQUI\_P_{gh,pe}\\
+ & =\\
+ & {\displaystyle \sum_{st}\biggl\{\textcolor{black}{\text{DUR\_PS}}_{pe,st}\cdot\Bigl(GH\_POT\_PS_{gh,pe,st}-\textcolor{black}{\text{GH\_CARAC}}_{gh,\texttt{gh\_rendturbom}}\cdot GH\_BOM\_PS_{gh,pe,st}\Bigr)\biggr\}+GH\_VE\_P_{gh,pe}\qquad\forall{gh,pe}}
+\end{align*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_GH\_PMAX\_PS}_{gh,pe,st}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Restricción de potencia máxima de turbinación del grupo hidráulico 
+\begin_inset Formula 
+\begin{align*}
+ & GH\_POT\_PS_{gh,pe,st}\\
+ & \leq\\
+ & \textcolor{black}{\text{GH\_CARAC}}_{gh,\texttt{gh\_upmaxres}}+\textcolor{black}{\text{GH\_CARAC}}_{gh,\texttt{gh\_vpamxres}}\cdot GH\_RES\_P_{gh,pe}\qquad\forall{gh,pe,st}
+\end{align*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_GH\_BMAX\_PS}_{gh,pe,st}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Restricción de potencia máxima de bombeo del grupo hidráulico 
+\begin_inset Formula 
+\begin{align*}
+ & GH\_BOM\_PS_{gh,pe,st}\\
+ & \leq\\
+ & \textcolor{black}{\text{GH\_BMAX\_P}}_{gh,pe}\qquad\forall{gh,pe,st}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_GH\_EMIN\_P}_{gh,pe}\biggl|_{\textcolor{black}{\text{GH\_POBLI\_P}}_{gh,pe}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Restricción de energía mínima obligada por el grupo hidráulico por periodo
+ 
+\begin_inset Formula 
+\begin{align*}
+{\displaystyle } & \sum_{st}\Bigl(\textcolor{black}{\text{DUR\_PS}}_{pe,st}\cdot GH\_POT\_PS_{gh,pe,st}\Bigr)\\
+ & \geq\\
+ & \textcolor{black}{\text{GH\_POBLI\_P}}_{gh,pe}\qquad\forall{gh,pe}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_GH\_RMIM\_P}_{gh,pe}\biggl|_{\textcolor{black}{\text{GH\_RMIN\_P}}_{gh,pe}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Restricción de reserva mínima de los embalses por periodo
+\begin_inset Formula 
+\begin{align*}
+ & GH\_RES\_P_{gh,pe}\\
+ & \geq\\
+ & \textcolor{black}{\text{GH\_RMIN\_P}}_{gh,pe}\qquad\forall{gh,pe}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_GH\_RMAX\_P}_{gh,pe}\biggl|_{\textcolor{black}{\text{GH\_RMAX\_P}}_{gh,pe}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Restricción de reserva máxima de los embalses por periodo
+\begin_inset Formula 
+\begin{align*}
+ & GH\_RES\_P_{gh,pe}\\
+ & \leq\\
+ & \textcolor{black}{\text{GH\_RMAX\_P}}_{gh,pe}\qquad\forall{gh,pe}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_GH\_RFIN\_P}_{gh}\biggl|_{\textcolor{black}{\text{GH\_CARAC}}_{gh,\texttt{gh\_rfin}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Restricción de reserva final del embalse al final del horizonte de ejecución
+ 
+\begin_inset Formula 
+\begin{align*}
+ & \textcolor{black}{\text{GH\_RES\_P}}_{gh,|pe|}\\
+ & =\\
+ & \textcolor{black}{\text{GH\_CARAC}}_{gh,\texttt{gh\_rfin}}\qquad\forall{gh}
+\end{align*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_AMV\_PMAX\_PS}_{amv,pe,st}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Restricción de potencia máxima generada por los amv
+\begin_inset Formula 
+\begin{align*}
+ & AMV\_POT\_PS_{amv,pe,st}\\
+ & \leq\\
+ & \textcolor{black}{\text{AMV\_OFERPOT\_PS}}_{amv,pe,st}\qquad\forall{amv,pe,st}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\text{R\_AMC\_PMAX\_PS}_{amc,pe,st}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Restricción de demanda máxima suministrada a los amc
+\begin_inset Formula 
+\begin{align*}
+ & AMC\_POT\_PS_{amc,pe,st}\\
+ & \leq\\
+ & \textcolor{black}{\text{AMC\_OFERPOT\_PS}}_{amc,pe,st}\qquad\forall{amc,pe,st}
+\end{align*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+Variables positivas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+C\_FO\_CARR & \geq0\\
+C\_FO\_CPAR & \geq0\\
+C\_FO\_CVACIO & \geq0\\
+C\_FO\_CVAR & \geq0\\
+C\_FO\_AM & \geq0\\
+C\_FO\_CENS & \geq0\\
+EM\_POT\_PS_{em,pe,st} & \geq0\qquad\forall em,pe,st\\
+DEM\_PS_{pe,st} & \geq0\qquad\forall pe,st\\
+DEM\_NPS_{nd,pe,st} & \geq0\qquad\forall nd,pe,st\\
+GT\_ACO\_PS_{gt,pe,st} & \geq0\qquad\forall gt,pe,st\\
+GT\_POT\_PS_{gt,pe,st} & \geq0\qquad\forall gt,pe,st\\
+AMV\_POT\_PS_{amv,pe,st} & \geq0\qquad\forall amv,pe,st\\
+AMC\_POT\_PS_{amc,pe,st} & \geq0\qquad\forall amc,pe,st\\
+DNS\_PS_{pe,st} & \geq0\qquad\forall pe,st\\
+GH\_POT\_PS_{gh,pe,st} & \geq0\qquad\forall gh,pe,st\\
+GH\_BOM\_PS_{gh,pe,st} & \geq0\qquad\forall gh,pe,st\\
+DEM\_CBILPOT\_NPS_{nd,pe,st} & \geq0\qquad\forall nd,pe,st\\
+DNS\_NPS_{nd,pe,st} & \geq0\qquad\forall nd,pe,st\\
+GH\_RES\_P_{gh,pe} & \geq0\qquad\forall gh,pe\\
+GH\_VE\_P_{gh,pe} & \geq0\qquad\forall gh,pe
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Variables binarias
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+GT\_ARR\_PSS_{gt,pe,st,st2} & \in\{0,1\}\qquad\forall gt,pe,st,st2\\
+GT\_ARR\_P_{gt,pe} & \in\{0,1\}\qquad\forall gt,pe\\
+GT\_PAR\_PSS_{gt,pe,st,st2} & \in\{0,1\}\qquad\forall gt,pe,st,st2\\
+GT\_PAR\_P_{gt,pe} & \in\{0,1\}\qquad\forall gt,pe
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

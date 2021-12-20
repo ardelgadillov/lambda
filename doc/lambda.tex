@@ -1,0 +1,416 @@
+\documentclass[11pt]{article}
+\usepackage{a4wide}
+
+%\usepackage[american]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+%\usepackage{tabular}
+\usepackage{ltablex}
+\keepXColumns
+\usepackage{xcolor}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\section*{Symbols}
+\subsection*{Sets}
+\begin{tabular}{|l|l|l|} 
+\hline 
+\textbf{Name} & \textbf{Domains} & \textbf{Description}\\ 
+\hline 
+ 
+pe & pe & periodos \\ 
+st, st2 & st & estados \\ 
+gt & gt & grupos termico \\ 
+gh, gh2 & gh & grupos hidraulico \\ 
+em & em & empresas \\ 
+amv & amv & agentes marginalistas de venta \\ 
+amc & amc & agentes marginalistas de compra \\ 
+nd, nd2 & nd & nodos \\ 
+d\_st1 & * & caracteristicas de los estados \\ 
+d\_em1 & * & cuotas minimas de produccion de las empresa \\ 
+d\_gt1 & * & caracteristicas de los grupos termicos \\ 
+d\_gt2 & * & costes de los grupos termicos \\ 
+d\_gt3 & * & energia maxima y minima de los  grupos termicos \\ 
+d\_gh1 & * & caracteristicas de los grupos hidraulicos \\ 
+\hline 
+\end{tabular}
+\subsection*{Parameters}
+\begin{tabular}{|l|l|l|} 
+\hline 
+\textbf{Name} & \textbf{Domains} & \textbf{Description}\\ 
+\hline 
+ 
+OPT\_DEM &  &  \\ 
+OPT\_EQUI &  &  \\ 
+OPT\_RED &  &  \\ 
+DUR\_PS & pe, st & Duracion de los estados \\ 
+TRAN\_PSS & pe, st, st2 & Transicion entre estado st y st2 \\ 
+CARAC\_PS & pe, st, d\_st1 & Caracteristicas de los estados \\ 
+RED\_REAC & nd, nd2 & Reactancia de la linea entre los nodos nd y nd2 \\ 
+EM\_THETA\_PS & em, pe, st & Variacion conjetural del precio del sistema respecto a la produccion de la empresa en el periodo y estado \\ 
+EM\_CBILPOT\_PS & em, pe, st & Potencia de los contratos bilaterales de la empresa en el periodo y estado \\ 
+EM\_CDIFPOT\_PS & em, pe, st & Potencia de los contratos por diferencias de la empresa en el periodo y estado \\ 
+EM\_CUOTA & em, d\_em1 & Cuota minima de produccion de la empresa \\ 
+GT\_CARAC & gt, d\_gt1 & Caracteristicas del grupo termico \\ 
+GT\_COSTOS & gt, d\_gt2 & Costos del grupo termico \\ 
+GT\_CVAR\_P & gt, pe & Costo variable del grupo termico por periodo \\ 
+GT\_COEFDISP\_P & gt, pe & Coeficiente de disponibilidad del grupo termico por periodo \\ 
+GT\_EMAX\_P & gt, pe & Energia maxima que debe producir el grupo por periodo \\ 
+GT\_EMIN\_P & gt, pe & Energia minima que debe producir el grupo por periodo \\ 
+GT\_ENER & gt, d\_gt3 & Energia maxima y minima que debe producir el grupo a lo largo de todo el horizonte \\ 
+GT\_PERT\_EM & gt, em & Pertencia del grupo termico a la empresa \\ 
+GT\_LOCA\_ND & gt, nd & Localizacion del grupo (1 si esta en el nodo nd 0 en otro caso) \\ 
+GH\_CARAC & gh, d\_gh1 & Caracteristicas del grupo termico \\ 
+GH\_APOR\_P & gh, pe & Aportaciones hidricas del grupo hidraulico recibidas por periodo \\ 
+GH\_BMAX\_P & gh, pe & Potencia maxima de bombeo del grupo hidraulico por periodo \\ 
+GH\_POBLI\_P & gh, pe & Produccion minima obligada del grupo hidraulico por periodo \\ 
+GH\_RMAX\_P & gh, pe & Reserva maxima del grupo hidraulico por periodo \\ 
+GH\_RMIN\_P & gh, pe & Reserva minima del grupo hidraulico por periodo \\ 
+GH\_PERT\_EM & gh, em & Pertencia del grupo hidraulico a la empresa \\ 
+GH\_SUP\_GH & gh, gh2 & Sistemas hidraulicos inmediatamente superiores \\ 
+GH\_LOCA\_ND & gh, nd & Localizacion del grupo (1 si esta en el nodo nd 0 en otro caso) \\ 
+AMV\_OFERPCIO\_PS & amv, pe, st & Precio de generacion ofertado por el amv por periodo y estado \\ 
+AMV\_OFERPOT\_PS & amv, pe, st & Generacion ofertada por el amv por periodo y estado \\ 
+AMC\_OFERPCIO\_PS & amc, pe, st & Precio de demanda ofertado por el amc por periodo y estado \\ 
+AMC\_OFERPOT\_PS & amc, pe, st & Demanda ofertada por el amc por periodo y estado \\ 
+AMV\_LOCA\_ND & amv, nd & Localizacion del agente marginalista (1 si esta en el nodo nd 0 en otro caso) \\ 
+AMC\_LOCA\_ND & amc, nd & Localizacion del agente marginalista (1 si esta en el nodo nd 0 en otro caso) \\ 
+DEM\_COSTOENENOSUM &  & Costo de la energia no sumnistrada \\ 
+DEM\_ORD\_PS & pe, st & Ordenada en el origen de la potencia demandada en el periodo y estado \\ 
+DEM\_PEN\_PS & pe, st & Pendiente de la potencia demandada en el periodo y estado \\ 
+DEM\_ORD\_NPS & nd, pe, st & Ordenada en el origen de la potencia demandada en el periodo y estado por nodo \\ 
+DEM\_PEN\_NPS & nd, pe, st & Pendiente de la potencia demandada en el periodo y estado por nodo \\ 
+\hline 
+\end{tabular}
+\subsection*{Variables}
+\begin{tabular}{|l|l|l|} 
+\hline 
+\textbf{Name} & \textbf{Domains} & \textbf{Description}\\ 
+\hline 
+ 
+C\_FO\_TOT &  & Costo total \\ 
+C\_FO\_CARR &  & Costos totales de arranque \\ 
+C\_FO\_CPAR &  & Costos totales de parada \\ 
+C\_FO\_CVACIO &  & Costos totales de vacio \\ 
+C\_FO\_CVAR &  & Costos totales variables \\ 
+C\_FO\_AM &  & Ingresos y costos totales de los agentes marginalistas \\ 
+C\_FO\_CENS &  & Costo total de la energia no suministrada \\ 
+EM\_POT\_PS & em, pe, st & Potencia producida por la empresa en el periodo y estado \\ 
+GT\_POT\_PS & gt, pe, st & Potencia producida por el grupo termico en el periodo y estado \\ 
+GT\_ARR\_PSS & gt, pe, st, st2 & Decision de arranque del grupo termico del estado st al estado st2 \\ 
+GT\_PAR\_PSS & gt, pe, st, st2 & Decision de parada del grupo termico del estado st al estado st2 \\ 
+GT\_ARR\_P & gt, pe & Decision de arranque del grupo termico al inicio del periodo \\ 
+GT\_PAR\_P & gt, pe & Decision de parada del grupo termico al inicio del periodo \\ 
+GT\_ACO\_PS & gt, pe, st & Estado de acoplamiento del grupo en periodo y estado \\ 
+GH\_POT\_PS & gh, pe, st & Potencia turbinada por el grupo hidraulico en el periodo y estado \\ 
+GH\_BOM\_PS & gh, pe, st & Potencia bombeada por el grupo hidraulico en el periodo y estado \\ 
+GH\_VE\_P & gh, pe & Energia vertida por el grupo hidraulico en el p \\ 
+GH\_RES\_P & gh, pe & Reservas del grupo hidraulico al final del p \\ 
+GH\_EQUI\_P & gh, pe & Equivalente de la energia total del grupo hidraulico \\ 
+AMV\_POT\_PS & amv, pe, st & Potencia de generacion aceptada a un amv en el periodo y estado \\ 
+AMC\_POT\_PS & amc, pe, st & Demanda aceptada a un amc en el periodo y estado \\ 
+DEM\_PS & pe, st & Demanda de potencia en el periodo y estado \\ 
+DNS\_PS & pe, st & Potencia no suministrada por periodo y estado \\ 
+DEM\_NPS & nd, pe, st & Demanda de potencia en el periodo y estado por nodo \\ 
+DEM\_CBILPOT\_NPS & nd, pe, st & Potencia de los contratos bilaterales en cada nodo \\ 
+DNS\_NPS & nd, pe, st & Potencia no suministrada por periodo y estado por nodo \\ 
+RED\_ANG & nd, pe, st & Angulo en el nodo por periodo y estado \\ 
+RED\_FLX & nd, nd2, pe, st & Flujo entre nodos nd y nd2 por periodo y estado \\ 
+\hline 
+\end{tabular}
+\subsection*{Equations}
+\begin{tabular}{|l|l|l|} 
+\hline 
+\textbf{Name} & \textbf{Domains} & \textbf{Description}\\ 
+\hline 
+ 
+\hyperref[R_FO_TOT]{R\_FO\_TOT} &  & Funcion objetivo \\ 
+\hyperref[R_FO_CARR]{R\_FO\_CARR} &  & Costos de arranque \\ 
+\hyperref[R_FO_CPAR]{R\_FO\_CPAR} &  & Costos de parada \\ 
+\hyperref[R_FO_CVACIO]{R\_FO\_CVACIO} &  & Costos de vacio \\ 
+\hyperref[R_FO_CVAR]{R\_FO\_CVAR} &  & Costos variables \\ 
+\hyperref[R_FO_AM]{R\_FO\_AM} &  & Ingresos y costos de los agentes marginalistas \\ 
+\hyperref[R_FO_CENS]{R\_FO\_CENS} &  & Costo de la energia no sumnistrada \\ 
+\hyperref[R_DEM_BALPOT_PS]{R\_DEM\_BALPOT\_PS} & pe, st & Balance de porencia en cada ps \\ 
+\hyperref[R_DEM_BALPOT_NPS]{R\_DEM\_BALPOT\_NPS} & nd, pe, st & Balance de porencia en cada ps por nodo \\ 
+\hyperref[R_DEM_CBILPOT_PS]{R\_DEM\_CBILPOT\_PS} & pe, st & Balance de los contratos bilaterales \\ 
+\hyperref[R_RED_FLUJO]{R\_RED\_FLUJO} & nd, nd2, pe, st & Flujo entre los nodos nd y nd2 \\ 
+\hyperref[R_EM_CUOTA]{R\_EM\_CUOTA} & em & Restriccion de cuota de la empresa \\ 
+\hyperref[R_EM_POT_PS]{R\_EM\_POT\_PS} & em, pe, st & Potencia de la empresa \\ 
+\hyperref[R_GT_PMIN_PS]{R\_GT\_PMIN\_PS} & gt, pe, st & Potencia minima del grupo termico \\ 
+\hyperref[R_GT_PMAX_PS]{R\_GT\_PMAX\_PS} & gt, pe, st & Potencia maxima del grupo termico \\ 
+\hyperref[R_GT_EMIN_P]{R\_GT\_EMIN\_P} & gt, pe & Energia minima del grupo termico en el p \\ 
+\hyperref[R_GT_EMAX_P]{R\_GT\_EMAX\_P} & gt, pe & Energia maxima del grupo termico en el p \\ 
+\hyperref[R_GT_ARRPAR_PSS]{R\_GT\_ARRPAR\_PSS} & gt, pe, st, st2 & Restriccion de arranque y parada del grupo termico entre estados del p \\ 
+\hyperref[R_GT_ARRPAR_P]{R\_GT\_ARRPAR\_P} & gt, pe & Restriccion de arranque y parada al inicio del p \\ 
+\hyperref[R_GT_ETMIN]{R\_GT\_ETMIN} & gt & Energia minima total producida por el grupo \\ 
+\hyperref[R_GT_ETMAX]{R\_GT\_ETMAX} & gt & Energia maxima total producida por el grupo \\ 
+\hyperref[R_GH_BALHID_P]{R\_GH\_BALHID\_P} & gh, pe & Balance hidraulico por p \\ 
+\hyperref[R_GH_EQUI_P]{R\_GH\_EQUI\_P} & gh, pe & Energia total equivalente del grupo por p \\ 
+\hyperref[R_GH_PMAX_PS]{R\_GH\_PMAX\_PS} & gh, pe, st & Potencia maxima de turbinacion del grupo hidraulico \\ 
+\hyperref[R_GH_BMAX_PS]{R\_GH\_BMAX\_PS} & gh, pe, st & Potencia maxima de bombeo del grupo hidraulico \\ 
+\hyperref[R_GH_EMIN_P]{R\_GH\_EMIN\_P} & gh, pe & Energia minima producida por el grupo hidraulico en el p \\ 
+\hyperref[R_GH_RMIM_P]{R\_GH\_RMIM\_P} & gh, pe & Reserva minima de los embalses \\ 
+\hyperref[R_GH_RMAX_P]{R\_GH\_RMAX\_P} & gh, pe & Reserva maxima de los embalses \\ 
+\hyperref[R_GH_RFIN_P]{R\_GH\_RFIN\_P} & gh & Reserva final del embalse al final del horizonte de ejecucion \\ 
+\hyperref[R_AMV_PMAX_PS]{R\_AMV\_PMAX\_PS} & amv, pe, st & Potencia maxima generada por los amv \\ 
+\hyperref[R_AMC_PMAX_PS]{R\_AMC\_PMAX\_PS} & amc, pe, st & Demanda maxima suministrada a los amc \\ 
+\hline 
+\end{tabular}
+\section*{Equation Definitions}
+\subsubsection*{$\text{R\_FO\_TOT}$} \label{R_FO_TOT}
+$
+\textcolor{black}{\text{C\_FO\_TOT}} = \textcolor{black}{\text{C\_FO\_CARR}} + \textcolor{black}{\text{C\_FO\_CPAR}} + \textcolor{black}{\text{C\_FO\_CVACIO}} + \textcolor{black}{\text{C\_FO\_CVAR}} + \textcolor{black}{\text{C\_FO\_AM}} + \textcolor{black}{\text{C\_FO\_CENS}} + \displaystyle \sum_{em, pe, st} ( 0.5 \cdot \textcolor{black}{\text{DUR\_PS}}_{pe, st} \cdot \textcolor{black}{\text{EM\_THETA\_PS}}_{em, pe, st} \cdot  ( \textcolor{black}{\text{EM\_POT\_PS}}_{em, pe, st} - \textcolor{black}{\text{EM\_CBILPOT\_PS}}_{em, pe, st} - \textcolor{black}{\text{EM\_CDIFPOT\_PS}}_{em, pe, st} )  \cdot  ( \textcolor{black}{\text{EM\_POT\_PS}}_{em, pe, st} - \textcolor{black}{\text{EM\_CBILPOT\_PS}}_{em, pe, st} - \textcolor{black}{\text{EM\_CDIFPOT\_PS}}_{em, pe, st} )  )  [  ( \textcolor{black}{\text{OPT\_EQUI}}  =  1 )  ]  - \displaystyle \sum_{pe, st | \textcolor{black}{\text{DEM\_PEN\_PS}}_{pe, st}} ( \textcolor{black}{\text{DUR\_PS}}_{pe, st} \cdot  \frac{1}{\textcolor{black}{\text{DEM\_PEN\_PS}}_{pe, st}}  \cdot  ( \textcolor{black}{\text{DEM\_PS}}_{pe, st} \cdot \textcolor{black}{\text{DEM\_ORD\_PS}}_{pe, st} - 0.5 \cdot \textcolor{black}{\text{DEM\_PS}}_{pe, st} \cdot \textcolor{black}{\text{DEM\_PS}}_{pe, st} )  )  [  (  ( \textcolor{black}{\text{OPT\_DEM}}  =  1 )  \wedge  ( \textcolor{black}{\text{OPT\_RED}}  =  0 )  ) ]  - \displaystyle \sum_{nd, pe, st | \textcolor{black}{\text{DEM\_PEN\_NPS}}_{nd, pe, st}} ( \textcolor{black}{\text{DUR\_PS}}_{pe, st} \cdot  \frac{1}{\textcolor{black}{\text{DEM\_PEN\_NPS}}_{nd, pe, st}}  \cdot  ( \textcolor{black}{\text{DEM\_NPS}}_{nd, pe, st} \cdot \textcolor{black}{\text{DEM\_ORD\_NPS}}_{nd, pe, st} - 0.5 \cdot \textcolor{black}{\text{DEM\_NPS}}_{nd, pe, st} \cdot \textcolor{black}{\text{DEM\_NPS}}_{nd, pe, st} )  )  [  (  ( \textcolor{black}{\text{OPT\_DEM}}  =  1 )  \wedge  ( \textcolor{black}{\text{OPT\_RED}}  =  1 )  ) ] 
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_FO\_CARR}$} \label{R_FO_CARR}
+$
+\textcolor{black}{\text{C\_FO\_CARR}} = \displaystyle \sum_{gt} ( \textcolor{black}{\text{GT\_COSTOS}}_{gt, \texttt{gt\_carr}} \cdot  ( \displaystyle \sum_{pe, st, st2 |  (  \text{ord}( st )   \neq   \text{ord}( st2 )  ) } ( \textcolor{black}{\text{TRAN\_PSS}}_{pe, st, st2} \cdot \textcolor{black}{\text{GT\_ARR\_PSS}}_{gt, pe, st, st2} )  + \displaystyle \sum_{pe} ( \textcolor{black}{\text{GT\_ARR\_P}}_{gt, pe} )  )  ) 
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_FO\_CPAR}$} \label{R_FO_CPAR}
+$
+\textcolor{black}{\text{C\_FO\_CPAR}} = \displaystyle \sum_{gt} ( \textcolor{black}{\text{GT\_COSTOS}}_{gt, \texttt{gt\_cpar}} \cdot  ( \displaystyle \sum_{pe, st, st2 |  (  \text{ord}( st )   \neq   \text{ord}( st2 )  ) } ( \textcolor{black}{\text{TRAN\_PSS}}_{pe, st, st2} \cdot \textcolor{black}{\text{GT\_PAR\_PSS}}_{gt, pe, st, st2} )  + \displaystyle \sum_{pe} ( \textcolor{black}{\text{GT\_PAR\_P}}_{gt, pe} )  )  ) 
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_FO\_CVACIO}$} \label{R_FO_CVACIO}
+$
+\textcolor{black}{\text{C\_FO\_CVACIO}} = \displaystyle \sum_{gt, pe, st} ( \textcolor{black}{\text{GT\_COSTOS}}_{gt, \texttt{gt\_cvacio}} \cdot \textcolor{black}{\text{DUR\_PS}}_{pe, st} \cdot \textcolor{black}{\text{GT\_ACO\_PS}}_{gt, pe, st} ) 
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_FO\_CVAR}$} \label{R_FO_CVAR}
+$
+\textcolor{black}{\text{C\_FO\_CVAR}} = \displaystyle \sum_{gt, pe, st} ( \textcolor{black}{\text{GT\_CVAR\_P}}_{gt, pe} \cdot \textcolor{black}{\text{DUR\_PS}}_{pe, st} \cdot \textcolor{black}{\text{GT\_POT\_PS}}_{gt, pe, st} ) 
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_FO\_AM}$} \label{R_FO_AM}
+$
+\textcolor{black}{\text{C\_FO\_AM}} = \displaystyle \sum_{amv, pe, st} ( \textcolor{black}{\text{DUR\_PS}}_{pe, st} \cdot  ( \textcolor{black}{\text{AMV\_POT\_PS}}_{amv, pe, st} \cdot \textcolor{black}{\text{AMV\_OFERPCIO\_PS}}_{amv, pe, st} )  )  - \displaystyle \sum_{amc, pe, st} ( \textcolor{black}{\text{DUR\_PS}}_{pe, st} \cdot  ( \textcolor{black}{\text{AMC\_POT\_PS}}_{amc, pe, st} \cdot \textcolor{black}{\text{AMC\_OFERPCIO\_PS}}_{amc, pe, st} )  ) 
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_FO\_CENS}$} \label{R_FO_CENS}
+$
+\textcolor{black}{\text{C\_FO\_CENS}} = \displaystyle \sum_{pe, st} ( \textcolor{black}{\text{DUR\_PS}}_{pe, st} \cdot \textcolor{black}{\text{DEM\_COSTOENENOSUM}} \cdot \textcolor{black}{\text{DNS\_PS}}_{pe, st} ) 
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_DEM\_BALPOT\_PS}_{pe, st}$} \label{R_DEM_BALPOT_PS}
+$
+\displaystyle \sum_{gt} ( \textcolor{black}{\text{GT\_POT\_PS}}_{gt, pe, st} )  + \displaystyle \sum_{gh} ( \textcolor{black}{\text{GH\_POT\_PS}}_{gh, pe, st} )  + \displaystyle \sum_{amv} ( \textcolor{black}{\text{AMV\_POT\_PS}}_{amv, pe, st} )  = \textcolor{black}{\text{DEM\_PS}}_{pe, st} + \displaystyle \sum_{em} ( \textcolor{black}{\text{EM\_CBILPOT\_PS}}_{em, pe, st} )  + \displaystyle \sum_{gh} ( \textcolor{black}{\text{GH\_BOM\_PS}}_{gh, pe, st} )  + \displaystyle \sum_{amc} ( \textcolor{black}{\text{AMC\_POT\_PS}}_{amc, pe, st} )  + \textcolor{black}{\text{DNS\_PS}}_{pe, st}
+$
+\hfill
+$
+\forall{ pe, st}  ~ | ~ ( \textcolor{black}{\text{OPT\_RED}}  =  0 ) 
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_DEM\_BALPOT\_NPS}_{nd, pe, st}$} \label{R_DEM_BALPOT_NPS}
+$
+\displaystyle \sum_{gt | \textcolor{black}{\text{GT\_LOCA\_ND}}_{gt, nd}} ( \textcolor{black}{\text{GT\_POT\_PS}}_{gt, pe, st} )  + \displaystyle \sum_{gh | \textcolor{black}{\text{GH\_LOCA\_ND}}_{gh, nd}} ( \textcolor{black}{\text{GH\_POT\_PS}}_{gh, pe, st} )  + \displaystyle \sum_{amv | \textcolor{black}{\text{AMV\_LOCA\_ND}}_{amv, nd}} ( \textcolor{black}{\text{AMV\_POT\_PS}}_{amv, pe, st} )  - \displaystyle \sum_{nd2 |  (  \text{ord}( nd )   \neq   \text{ord}( nd2 )  ) } ( \textcolor{black}{\text{RED\_FLX}}_{nd, nd2, pe, st} )  = \textcolor{black}{\text{DEM\_NPS}}_{nd, pe, st} + \textcolor{black}{\text{DEM\_CBILPOT\_NPS}}_{nd, pe, st} + \displaystyle \sum_{gh | \textcolor{black}{\text{GH\_LOCA\_ND}}_{gh, nd}} ( \textcolor{black}{\text{GH\_BOM\_PS}}_{gh, pe, st} )  + \displaystyle \sum_{amc | \textcolor{black}{\text{AMC\_LOCA\_ND}}_{amc, nd}} ( \textcolor{black}{\text{AMC\_POT\_PS}}_{amc, pe, st} )  + \textcolor{black}{\text{DNS\_NPS}}_{nd, pe, st}
+$
+\hfill
+$
+\forall{ nd, pe, st}  ~ | ~ ( \textcolor{black}{\text{OPT\_RED}}  =  1 ) 
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_DEM\_CBILPOT\_PS}_{pe, st}$} \label{R_DEM_CBILPOT_PS}
+$
+\displaystyle \sum_{nd} ( \textcolor{black}{\text{DEM\_CBILPOT\_NPS}}_{nd, pe, st} )  = \displaystyle \sum_{em} ( \textcolor{black}{\text{EM\_CBILPOT\_PS}}_{em, pe, st} ) 
+$
+\hfill
+$
+\forall{ pe, st}  ~ | ~ ( \textcolor{black}{\text{OPT\_RED}}  =  1 ) 
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_RED\_FLUJO}_{nd, nd2, pe, st}$} \label{R_RED_FLUJO}
+$
+\textcolor{black}{\text{RED\_FLX}}_{nd, nd2, pe, st} = \textcolor{black}{\text{RED\_REAC}}_{nd, nd2} \cdot  ( \textcolor{black}{\text{RED\_ANG}}_{nd, pe, st} - \textcolor{black}{\text{RED\_ANG}}_{nd2, pe, st} ) 
+$
+\hfill
+$
+\forall{ nd, nd2, pe, st}  ~ | ~ (  ( \textcolor{black}{\text{OPT\_RED}}  =  1 )  \wedge  (  \text{ord}( nd )   \neq   \text{ord}( nd2 )  )  )
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_EM\_CUOTA}_{em}$} \label{R_EM_CUOTA}
+$
+\displaystyle \sum_{pe, st} ( \textcolor{black}{\text{DUR\_PS}}_{pe, st} \cdot \textcolor{black}{\text{EM\_POT\_PS}}_{em, pe, st} )  \geq \textcolor{black}{\text{EM\_CUOTA}}_{em, \texttt{em\_cuotamin}} \cdot \displaystyle \sum_{pe, st} ( \textcolor{black}{\text{DUR\_PS}}_{pe, st} \cdot \textcolor{black}{\text{DEM\_PS}}_{pe, st} ) 
+$
+\hfill
+$
+\forall{ em}  ~ | ~\textcolor{black}{\text{EM\_CUOTA}}_{em, \texttt{em\_cuotamin}}
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_EM\_POT\_PS}_{em, pe, st}$} \label{R_EM_POT_PS}
+$
+\textcolor{black}{\text{EM\_POT\_PS}}_{em, pe, st} = \displaystyle \sum_{gt} ( \textcolor{black}{\text{GT\_PERT\_EM}}_{gt, em} \cdot \textcolor{black}{\text{GT\_POT\_PS}}_{gt, pe, st} )  + \displaystyle \sum_{gh} ( \textcolor{black}{\text{GH\_PERT\_EM}}_{gh, em} \cdot  ( \textcolor{black}{\text{GH\_POT\_PS}}_{gh, pe, st} - \textcolor{black}{\text{GH\_BOM\_PS}}_{gh, pe, st} )  ) 
+$
+\hfill
+$
+\forall{ em, pe, st} 
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_GT\_PMIN\_PS}_{gt, pe, st}$} \label{R_GT_PMIN_PS}
+$
+\textcolor{black}{\text{GT\_POT\_PS}}_{gt, pe, st} \geq \textcolor{black}{\text{GT\_CARAC}}_{gt, \texttt{gt\_pmin}} \cdot \textcolor{black}{\text{GT\_ACO\_PS}}_{gt, pe, st} \cdot \textcolor{black}{\text{GT\_COEFDISP\_P}}_{gt, pe}
+$
+\hfill
+$
+\forall{ gt, pe, st} 
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_GT\_PMAX\_PS}_{gt, pe, st}$} \label{R_GT_PMAX_PS}
+$
+\textcolor{black}{\text{GT\_POT\_PS}}_{gt, pe, st} \leq \textcolor{black}{\text{GT\_CARAC}}_{gt, \texttt{gt\_pmax}} \cdot \textcolor{black}{\text{GT\_ACO\_PS}}_{gt, pe, st} \cdot \textcolor{black}{\text{GT\_COEFDISP\_P}}_{gt, pe}
+$
+\hfill
+$
+\forall{ gt, pe, st} 
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_GT\_EMIN\_P}_{gt, pe}$} \label{R_GT_EMIN_P}
+$
+\displaystyle \sum_{st} ( \textcolor{black}{\text{GT\_POT\_PS}}_{gt, pe, st} \cdot \textcolor{black}{\text{DUR\_PS}}_{pe, st} )  \geq \textcolor{black}{\text{GT\_EMIN\_P}}_{gt, pe}
+$
+\hfill
+$
+\forall{ gt, pe}  ~ | ~\textcolor{black}{\text{GT\_EMIN\_P}}_{gt, pe}
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_GT\_EMAX\_P}_{gt, pe}$} \label{R_GT_EMAX_P}
+$
+\displaystyle \sum_{st} ( \textcolor{black}{\text{GT\_POT\_PS}}_{gt, pe, st} \cdot \textcolor{black}{\text{DUR\_PS}}_{pe, st} )  \leq \textcolor{black}{\text{GT\_EMAX\_P}}_{gt, pe}
+$
+\hfill
+$
+\forall{ gt, pe}  ~ | ~\textcolor{black}{\text{GT\_EMAX\_P}}_{gt, pe}
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_GT\_ARRPAR\_PSS}_{gt, pe, st, st2}$} \label{R_GT_ARRPAR_PSS}
+$
+\textcolor{black}{\text{GT\_ARR\_PSS}}_{gt, pe, st, st2} - \textcolor{black}{\text{GT\_PAR\_PSS}}_{gt, pe, st, st2} = \textcolor{black}{\text{GT\_ACO\_PS}}_{gt, pe, st2} - \textcolor{black}{\text{GT\_ACO\_PS}}_{gt, pe, st}
+$
+\hfill
+$
+\forall{ gt, pe, st, st2}  ~ | ~ (  \text{ord}( st )   \neq   \text{ord}( st2 )  ) 
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_GT\_ARRPAR\_P}_{gt, pe}$} \label{R_GT_ARRPAR_P}
+$
+\textcolor{black}{\text{GT\_ARR\_P}}_{gt, pe} - \textcolor{black}{\text{GT\_PAR\_P}}_{gt, pe} = \displaystyle \sum_{st | \textcolor{black}{\text{CARAC\_PS}}_{pe, st, \texttt{st\_ini}}} ( \textcolor{black}{\text{GT\_ACO\_PS}}_{gt, pe, st} )  - \displaystyle \sum_{st | \textcolor{black}{\text{CARAC\_PS}}_{pe-1, st, \texttt{st\_fin}}} ( \textcolor{black}{\text{GT\_ACO\_PS}}_{gt, pe-1, st} )  [  (  \text{ord}( pe )   >  1 )  ]  - \textcolor{black}{\text{GT\_CARAC}}_{gt, \texttt{gt\_aco\_ini}} [  (  \text{ord}( pe )   =  1 )  ] 
+$
+\hfill
+$
+\forall{ gt, pe} 
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_GT\_ETMIN}_{gt}$} \label{R_GT_ETMIN}
+$
+\displaystyle \sum_{pe, st} ( \textcolor{black}{\text{DUR\_PS}}_{pe, st} \cdot \textcolor{black}{\text{GT\_POT\_PS}}_{gt, pe, st} )  \geq \textcolor{black}{\text{GT\_ENER}}_{gt, \texttt{gt\_emin}}
+$
+\hfill
+$
+\forall{ gt}  ~ | ~\textcolor{black}{\text{GT\_ENER}}_{gt, \texttt{gt\_emin}}
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_GT\_ETMAX}_{gt}$} \label{R_GT_ETMAX}
+$
+\displaystyle \sum_{pe, st} ( \textcolor{black}{\text{DUR\_PS}}_{pe, st} \cdot \textcolor{black}{\text{GT\_POT\_PS}}_{gt, pe, st} )  \leq \textcolor{black}{\text{GT\_ENER}}_{gt, \texttt{gt\_emax}}
+$
+\hfill
+$
+\forall{ gt}  ~ | ~\textcolor{black}{\text{GT\_ENER}}_{gt, \texttt{gt\_emax}}
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_GH\_BALHID\_P}_{gh, pe}$} \label{R_GH_BALHID_P}
+$
+\textcolor{black}{\text{GH\_RES\_P}}_{gh, pe} - \textcolor{black}{\text{GH\_RES\_P}}_{gh, pe-1} [  (  \text{ord}( pe )   >  1 )  ]  - \textcolor{black}{\text{GH\_CARAC}}_{gh, \texttt{gh\_rini}} [  (  \text{ord}( pe )   =  1 )  ]  = \textcolor{black}{\text{GH\_APOR\_P}}_{gh, pe} + \displaystyle \sum_{gh2 | \textcolor{black}{\text{GH\_SUP\_GH}}_{gh2, gh}} ( \textcolor{black}{\text{GH\_SUP\_GH}}_{gh2, gh} \cdot \textcolor{black}{\text{GH\_EQUI\_P}}_{gh2, pe} )  - \textcolor{black}{\text{GH\_EQUI\_P}}_{gh, pe}
+$
+\hfill
+$
+\forall{ gh, pe} 
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_GH\_EQUI\_P}_{gh, pe}$} \label{R_GH_EQUI_P}
+$
+\textcolor{black}{\text{GH\_EQUI\_P}}_{gh, pe} = \displaystyle \sum_{st} ( \textcolor{black}{\text{DUR\_PS}}_{pe, st} \cdot  ( \textcolor{black}{\text{GH\_POT\_PS}}_{gh, pe, st} - \textcolor{black}{\text{GH\_CARAC}}_{gh, \texttt{gh\_rendturbom}} \cdot \textcolor{black}{\text{GH\_BOM\_PS}}_{gh, pe, st} )  )  + \textcolor{black}{\text{GH\_VE\_P}}_{gh, pe}
+$
+\hfill
+$
+\forall{ gh, pe} 
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_GH\_PMAX\_PS}_{gh, pe, st}$} \label{R_GH_PMAX_PS}
+$
+\textcolor{black}{\text{GH\_POT\_PS}}_{gh, pe, st} \leq \textcolor{black}{\text{GH\_CARAC}}_{gh, \texttt{gh\_upmaxres}} + \textcolor{black}{\text{GH\_CARAC}}_{gh, \texttt{gh\_vpamxres}} \cdot \textcolor{black}{\text{GH\_RES\_P}}_{gh, pe}
+$
+\hfill
+$
+\forall{ gh, pe, st} 
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_GH\_BMAX\_PS}_{gh, pe, st}$} \label{R_GH_BMAX_PS}
+$
+\textcolor{black}{\text{GH\_BOM\_PS}}_{gh, pe, st} \leq \textcolor{black}{\text{GH\_BMAX\_P}}_{gh, pe}
+$
+\hfill
+$
+\forall{ gh, pe, st} 
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_GH\_EMIN\_P}_{gh, pe}$} \label{R_GH_EMIN_P}
+$
+\displaystyle \sum_{st} ( \textcolor{black}{\text{DUR\_PS}}_{pe, st} \cdot \textcolor{black}{\text{GH\_POT\_PS}}_{gh, pe, st} )  \geq \textcolor{black}{\text{GH\_POBLI\_P}}_{gh, pe}
+$
+\hfill
+$
+\forall{ gh, pe}  ~ | ~\textcolor{black}{\text{GH\_POBLI\_P}}_{gh, pe}
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_GH\_RMIM\_P}_{gh, pe}$} \label{R_GH_RMIM_P}
+$
+\textcolor{black}{\text{GH\_RES\_P}}_{gh, pe} \geq \textcolor{black}{\text{GH\_RMIN\_P}}_{gh, pe}
+$
+\hfill
+$
+\forall{ gh, pe}  ~ | ~\textcolor{black}{\text{GH\_RMIN\_P}}_{gh, pe}
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_GH\_RMAX\_P}_{gh, pe}$} \label{R_GH_RMAX_P}
+$
+\textcolor{black}{\text{GH\_RES\_P}}_{gh, pe} \leq \textcolor{black}{\text{GH\_RMAX\_P}}_{gh, pe}
+$
+\hfill
+$
+\forall{ gh, pe}  ~ | ~\textcolor{black}{\text{GH\_RMIN\_P}}_{gh, pe}
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_GH\_RFIN\_P}_{gh}$} \label{R_GH_RFIN_P}
+$
+\displaystyle \sum_{pe |  (  \text{ord}( pe )   =   | pe |  ) } ( \textcolor{black}{\text{GH\_RES\_P}}_{gh, pe} )  = \textcolor{black}{\text{GH\_CARAC}}_{gh, \texttt{gh\_rfin}}
+$
+\hfill
+$
+\forall{ gh}  ~ | ~\textcolor{black}{\text{GH\_CARAC}}_{gh, \texttt{gh\_rfin}}
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_AMV\_PMAX\_PS}_{amv, pe, st}$} \label{R_AMV_PMAX_PS}
+$
+\textcolor{black}{\text{AMV\_POT\_PS}}_{amv, pe, st} \leq \textcolor{black}{\text{AMV\_OFERPOT\_PS}}_{amv, pe, st}
+$
+\hfill
+$
+\forall{ amv, pe, st} 
+$ \\
+\hrule 
+\subsubsection*{$\text{R\_AMC\_PMAX\_PS}_{amc, pe, st}$} \label{R_AMC_PMAX_PS}
+$
+\textcolor{black}{\text{AMC\_POT\_PS}}_{amc, pe, st} \leq \textcolor{black}{\text{AMC\_OFERPOT\_PS}}_{amc, pe, st}
+$
+\hfill
+$
+\forall{ amc, pe, st} 
+$ \\
+\hrule 
+\bigskip
+$\text{C\_FO\_CARR}\geq 0 ~ \forall $ , $\text{C\_FO\_CPAR}\geq 0 ~ \forall $ , $\text{C\_FO\_CVACIO}\geq 0 ~ \forall $ , $\text{C\_FO\_CVAR}\geq 0 ~ \forall $ , $\text{C\_FO\_AM}\geq 0 ~ \forall $ , $\text{C\_FO\_CENS}\geq 0 ~ \forall $ , $\text{EM\_POT\_PS}_{em, pe, st}\geq 0 ~ \forall em, pe, st$ , $\text{DEM\_PS}_{pe, st}\geq 0 ~ \forall pe, st$ , $\text{DEM\_NPS}_{nd, pe, st}\geq 0 ~ \forall nd, pe, st$ , $\text{GT\_ARR\_PSS}_{gt, pe, st, st2}\in \{0,1\} ~ \forall gt, pe, st, st2$ , $\text{GT\_ARR\_P}_{gt, pe}\in \{0,1\} ~ \forall gt, pe$ , $\text{GT\_PAR\_PSS}_{gt, pe, st, st2}\in \{0,1\} ~ \forall gt, pe, st, st2$ , $\text{GT\_PAR\_P}_{gt, pe}\in \{0,1\} ~ \forall gt, pe$ , $\text{GT\_ACO\_PS}_{gt, pe, st}\geq 0 ~ \forall gt, pe, st$ , $\text{GT\_POT\_PS}_{gt, pe, st}\geq 0 ~ \forall gt, pe, st$ , $\text{AMV\_POT\_PS}_{amv, pe, st}\geq 0 ~ \forall amv, pe, st$ , $\text{AMC\_POT\_PS}_{amc, pe, st}\geq 0 ~ \forall amc, pe, st$ , $\text{DNS\_PS}_{pe, st}\geq 0 ~ \forall pe, st$ , $\text{GH\_POT\_PS}_{gh, pe, st}\geq 0 ~ \forall gh, pe, st$ , $\text{GH\_BOM\_PS}_{gh, pe, st}\geq 0 ~ \forall gh, pe, st$ , $\text{DEM\_CBILPOT\_NPS}_{nd, pe, st}\geq 0 ~ \forall nd, pe, st$ , $\text{DNS\_NPS}_{nd, pe, st}\geq 0 ~ \forall nd, pe, st$ , $\text{GH\_RES\_P}_{gh, pe}\geq 0 ~ \forall gh, pe$ , $\text{GH\_VE\_P}_{gh, pe}\geq 0 ~ \forall gh, pe$ 
+\bigskip
+\end{document}

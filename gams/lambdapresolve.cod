@@ -1,0 +1,42 @@
+
+** Pre Solve
+
+** Variables de optimizacion
+
+** Variables de las empresa
+*    EM_POT_PS.UP(em,pe,st)
+    
+** Variables de los grupos termicos
+    GT_POT_PS.UP(gt,pe,st) =  GT_CARAC(gt,'gt_pmax');
+    GT_ARR_PSS.FX(gt,pe,st,st) = 0;
+    GT_PAR_PSS.FX(gt,pe,st,st) = 0;
+
+*    GT_ARR_P(gt,pe)
+*    GT_PAR_P(gt,pe)
+*    GT_ACO_PS(gt,pe,st)
+    
+** Variables de los grupos hidraulicos
+*    GH_POT_PS.UP(gh,pe,st) 
+*    GH_BOM_PS(gh,pe,st)
+*    GH_VE_P(gh,pe)
+*    GH_RES_P(gh,pe)
+*    GH_APOSINF_P(gh,pe)
+    
+** Variables de los agentes marginalistas
+*    AMV_POT_PS(amv,pe,st)
+*    AMC_POT_PS(amc,pe,st)
+    
+** Variables de la demanda
+*   Demanda Inelastica
+IF( (OPT_DEM EQ 0) AND (OPT_RED EQ 0),
+    DEM_PS.FX(pe,st) = DEM_INE_PS(pe,st);
+*    DNS_PS(pe,st)
+);
+IF( (OPT_DEM EQ 0) AND (OPT_RED EQ 1),
+    DEM_NPS.FX(nd,pe,st) = DEM_INE_NPS(nd,pe,st);
+);
+
+** Variables de la red
+    RED_FLX.LO(nd,nd2,pe,st) = -RED_CAPLIN(nd,nd2);
+    RED_FLX.UP(nd,nd2,pe,st) = RED_CAPLIN(nd,nd2);
+    RED_FLX.FX(nd,nd,pe,st) = 0;

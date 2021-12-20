@@ -1,0 +1,10 @@
+** Solucion del modelo
+*   Variables relajadas
+    IF ( (OPT_ENT EQ 0),
+        LAMBDA_INE_CP.optfile = 1;
+        SOLVE LAMBDA_INE_CP USING rMIQCP MINIMIZING C_FO_TOT ;
+*   Variables enteras
+    ELSE
+        LAMBDA_INE_CP.optfile = 1;
+        SOLVE LAMBDA_INE_CP USING MIQCP MINIMIZING C_FO_TOT ;
+    );

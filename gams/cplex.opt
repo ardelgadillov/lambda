@@ -1,0 +1,4 @@
+lpmethod 6
+startalg 6
+threads 4
+epgap 1e-20

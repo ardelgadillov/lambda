@@ -1,0 +1,4 @@
+OPT_EQUI = 0;
+OPT_DEM = 0;
+OPT_ENT = 0;
+OPT_RED = 1;

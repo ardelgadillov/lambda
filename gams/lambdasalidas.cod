@@ -1,0 +1,602 @@
+
+** Inicia los parametros de salida
+    S_DEM_POT_NPS(nd,pe,st)=0;
+    S_DNS_POT_NPS(nd,pe,st)=0;
+    S_DEM_POT_PS(pe,st)=0;
+    S_DEM_POT_P(pe)=0;
+    S_DEM_POT(aux)=0;
+    S_DNS_POT_PS(pe,st)=0;
+    S_DNS_POT_P(pe)=0;
+    S_DNS_POT(aux)=0;
+    S_DEM_ENE_PS(pe,st)=0;
+    S_DEM_ENE_P(pe)=0;
+    S_DEM_ENE(aux)=0;
+    S_DNS_ENE_PS(pe,st)=0;
+    S_DNS_ENE_P(pe)=0;
+    S_DNS_ENE(aux)=0;
+    S_PCIO_NPS(nd,pe,st)=0;
+    S_PCIO_PS(pe,st)=0;
+    S_PCIO_P(pe)=0;
+    S_PCIOPOND_P(pe)=0;
+    S_PCIO(aux)=0;
+    S_PCIOPOND(aux)=0;
+    S_FLUJO_PS(nd,nd2,pe,st)=0;
+    S_EM_POT_PS(em,pe,st)=0;
+    S_EM_POT_P(em,pe)=0;
+    S_EM_POT(em)=0;
+    S_EM_POTPOS_PS(em,pe,st)=0;
+    S_EM_POTPOS_P(em,pe)=0;
+    S_EM_POS(em)=0;
+    S_EM_ENE_PS(em,pe,st)=0;
+    S_EM_ENE_P(em,pe)=0;
+    S_EM_ENE(em)=0;
+    S_EM_ENEPOS_PS(em,pe,st)=0;
+    S_EM_ENEPOS_P(em,pe)=0;
+    S_EM_POS(em)=0;
+    S_EM_BEN_PS(em,pe,st)=0;
+    S_EM_BEN_P(em,pe)=0;
+    S_EM_BEN(em)=0;
+    S_EM_ING_PS(em,pe,st)=0;
+    S_EM_ING_P(em,pe)=0;
+    S_EM_ING(em)=0;
+    S_EM_CARR_PS(em,pe,st)=0;
+    S_EM_CARR_P(em,pe)=0;
+    S_EM_CARR(em)=0;
+    S_EM_CPAR_PS(em,pe,st)=0;
+    S_EM_CPAR_P(em,pe)=0;
+    S_EM_CPAR(em)=0;
+    S_EM_CVCIO_PS(em,pe,st)=0;
+    S_EM_CVCIO_P(em,pe)=0;
+    S_EM_CVCIO(em)=0;
+    S_EM_CVAR_PS(em,pe,st)=0;
+    S_EM_CVAR_P(em,pe)=0;
+    S_EM_CVAR(em)=0;
+    S_EM_CTOT_PS(em,pe,st)=0;
+    S_EM_CTOT_P(em,pe)=0;
+    S_EM_CTOT(em)=0;
+    S_GT_POT_PS(gt,pe,st)=0;
+    S_GT_POT_P(gt,pe)=0;
+    S_GT_POT(gt)=0;
+    S_GT_ENE_PS(gt,pe,st)=0;
+    S_GT_ENE_P(gt,pe)=0;
+    S_GT_ENE(gt)=0;
+    S_GT_ARR_PS(gt,pe,st)=0;
+    S_GT_ARR_P(gt,pe)=0;
+    S_GT_ARR(gt)=0;
+    S_GT_PAR_PS(gt,pe,st)=0;
+    S_GT_PAR_P(gt,pe)=0;
+    S_GT_PAR(gt)=0;
+    S_GT_CARR_PS(gt,pe,st)=0;
+    S_GT_CARR_P(gt,pe)=0;
+    S_GT_CARR(gt)=0;
+    S_GT_CPAR_PS(gt,pe,st)=0;
+    S_GT_CPAR_P(gt,pe)=0;
+    S_GT_CPAR(gt)=0;
+    S_GT_CVCIO_PS(gt,pe,st)=0;
+    S_GT_CVCIO_P(gt,pe)=0;
+    S_GT_CVCIO(gt)=0;
+    S_GT_CVAR_PS(gt,pe,st)=0;
+    S_GT_CVAR_P(gt,pe)=0;
+    S_GT_CVAR(gt)=0;
+    S_GT_CTOT_PS(gt,pe,st)=0;
+    S_GT_CTOT_P(gt,pe)=0;
+    S_GT_CTOT(gt)=0;
+    S_GH_POT_PS(gh,pe,st)=0;
+    S_GH_POT_P(gh,pe)=0;
+    S_GH_POT(gh)=0;
+    S_GH_POTBOM_PS(gh,pe,st)=0;
+    S_GH_POTBOM_P(gh,pe)=0;
+    S_GH_POTBOM(gh)=0;
+    S_GH_ENE_PS(gh,pe,st)=0;
+    S_GH_ENE_P(gh,pe)=0;
+    S_GH_ENE(gh)=0;
+    S_GH_ENEBOM_PS(gh,pe,st)=0;
+    S_GH_ENEBOM_P(gh,pe)=0;
+    S_GH_ENEBOM(gh)=0;
+    S_GH_VE_P(gh,pe)=0;
+    S_GH_RES_P(gh,pe)=0;
+    S_GH_APOSINF_P(gh,gh2,pe)=0;
+    S_GH_VAGUA_P(gh,pe)=0;
+    S_GH_VAGUA(gh)=0;
+    S_AMV_POT_PS(amv,pe,st)=0;
+    S_AMV_POT_P(amv,pe)=0;
+    S_AMV_POT(amv)=0;
+    S_AMC_POT_PS(amc,pe,st)=0;
+    S_AMC_POT_P(amc,pe)=0;
+    S_AMC_POT(amc)=0;
+    S_AMV_ENE_PS(amv,pe,st)=0;
+    S_AMV_ENE_P(amv,pe)=0;
+    S_AMV_ENE(amv)=0;
+    S_AMC_ENE_PS(amc,pe,st)=0;
+    S_AMC_ENE_P(amc,pe)=0;
+    S_AMC_ENE(amc)=0;
+
+** Calcula los parametros auxiliares
+    X_DUR_P(pe) = SUM(st, DUR_PS(pe,st));
+    X_DUR = SUM(pe, X_DUR_P(pe));
+
+** Determina los parametros de salida
+
+*   Demanda (Potencia y Energia)
+
+    IF((OPT_RED EQ 1),
+        S_DEM_POT_NPS(nd,pe,st) = DEM_NPS.L(nd,pe,st) ;
+        S_DNS_POT_NPS(nd,pe,st) = DNS_NPS.L(nd,pe,st) ;
+        S_DEM_POT_PS(pe,st) = SUM(nd, S_DEM_POT_NPS(nd,pe,st)) ;
+        S_DNS_POT_PS(pe,st) = SUM(nd, S_DNS_POT_NPS(nd,pe,st)) ;
+    ELSE
+        S_DEM_POT_PS(pe,st) = DEM_PS.L(pe,st) ;
+        S_DNS_POT_PS(pe,st) = DNS_PS.L(pe,st) ;
+    );
+
+    S_DEM_POT_P(pe)$(X_DUR_P(pe)) = SUM(st, S_DEM_POT_PS(pe,st)*DUR_PS(pe,st)) / X_DUR_P(pe);
+
+    S_DEM_POT(aux)$(X_DUR) = SUM(pe, S_DEM_POT_P(pe)*X_DUR_P(pe)) / X_DUR;
+
+    S_DNS_POT_P(pe)$(X_DUR_P(pe)) = SUM(st, S_DNS_POT_PS(pe,st)*DUR_PS(pe,st)) / X_DUR_P(pe);
+
+    S_DNS_POT(aux)$(X_DUR) = SUM(pe, S_DNS_POT_P(pe)*X_DUR_P(pe)) / X_DUR;
+
+    S_DEM_ENE_PS(pe,st) = S_DEM_POT_PS(pe,st)*DUR_PS(pe,st);
+
+    S_DEM_ENE_P(pe) = SUM(st, S_DEM_ENE_PS(pe,st));
+
+    S_DEM_ENE(aux) = SUM(pe, S_DEM_ENE_P(pe));
+
+    S_DNS_ENE_PS(pe,st) = S_DNS_POT_PS(pe,st)*DUR_PS(pe,st);
+
+    S_DNS_ENE_P(pe) = SUM(st, S_DNS_ENE_PS(pe,st));
+
+    S_DNS_ENE(aux) = SUM(pe, S_DNS_ENE_P(pe));
+
+*   Precio del sistema
+
+    IF((OPT_RED EQ 1),
+        S_PCIO_NPS(nd,pe,st)$(DUR_PS(pe,st)) = R_DEM_BALPOT_NPS.M(nd,pe,st) / DUR_PS(pe,st) ;
+        S_PCIO_PS(pe,st)$(S_DEM_POT_PS(pe,st)) = SUM(nd, S_PCIO_NPS(nd,pe,st)*S_DEM_POT_NPS(nd,pe,st)) / S_DEM_POT_PS(pe,st) ;
+    ELSE
+        S_PCIO_PS(pe,st)$(DUR_PS(pe,st)) = R_DEM_BALPOT_PS.M(pe,st) / DUR_PS(pe,st) ;
+    );
+
+    S_PCIO_P(pe)$(X_DUR_P(pe)) = SUM(st, S_PCIO_PS(pe,st)*DUR_PS(pe,st)) / X_DUR_P(pe);
+
+    S_PCIOPOND_P(pe)$(S_DEM_ENE_P(pe)) = SUM(st, S_PCIO_PS(pe,st)*S_DEM_ENE_PS(pe,st)) / S_DEM_ENE_P(pe);
+
+    S_PCIO(aux)$(X_DUR) = SUM((pe,st), S_PCIO_PS(pe,st)*DUR_PS(pe,st)) / X_DUR;
+
+    S_PCIOPOND(aux)$(S_DEM_ENE(aux)) = SUM((pe,st), S_PCIO_PS(pe,st)*S_DEM_ENE_PS(pe,st)) / S_DEM_ENE(aux);
+
+*   Flujo entre los nodos
+
+    S_FLUJO_PS(nd,nd2,pe,st) = RED_FLX.L(nd,nd2,pe,st) ;
+
+*   Potencia y Energia de la empresa
+
+    S_EM_POT_PS(em,pe,st) = EM_POT_PS.L(em,pe,st);
+
+    S_EM_POT_P(em,pe)$(X_DUR_P(pe)) = SUM(st, S_EM_POT_PS(em,pe,st)*DUR_PS(pe,st)) / X_DUR_P(pe);
+
+    S_EM_POT(em)$(X_DUR) = SUM(pe, S_EM_POT_P(em,pe)*X_DUR_P(pe)) / X_DUR;
+
+    S_EM_ENE_PS(em,pe,st) = S_EM_POT_PS(em,pe,st)*DUR_PS(pe,st);
+
+    S_EM_ENE_P(em,pe) = SUM(st, S_EM_ENE_PS(em,pe,st));
+
+    S_EM_ENE(em) = SUM(pe, S_EM_ENE_P(em,pe));
+
+    S_EM_POTPOS_PS(em,pe,st) = S_EM_POT_PS(em,pe,st) - EM_CBILPOT_PS(em,pe,st) - EM_CDIFPOT_PS(em,pe,st);
+
+    S_EM_POTPOS_P(em,pe)$(X_DUR_P(pe)) = SUM(st, S_EM_POTPOS_PS(em,pe,st)*DUR_PS(pe,st)) / X_DUR_P(pe);
+
+    S_EM_POS(em)$(X_DUR) = SUM(pe, S_EM_POTPOS_P(em,pe)*X_DUR_P(pe)) / X_DUR;
+
+    S_EM_ENEPOS_PS(em,pe,st) = S_EM_POTPOS_PS(em,pe,st)*DUR_PS(pe,st);
+
+    S_EM_ENEPOS_P(em,pe) = SUM(st, S_EM_ENEPOS_PS(em,pe,st));
+
+    S_EM_ENEPOS(em) = SUM(pe, S_EM_ENE_P(em,pe));
+
+*   Potencia y Energia de los grupos termicos
+
+    S_GT_POT_PS(gt,pe,st) = GT_POT_PS.L(gt,pe,st);
+
+    S_GT_POT_P(gt,pe)$(X_DUR_P(pe)) = SUM(st, S_GT_POT_PS(gt,pe,st)*DUR_PS(pe,st)) / X_DUR_P(pe);
+
+    S_GT_POT(gt)$(X_DUR) = SUM(pe, S_GT_POT_P(gt,pe)*X_DUR_P(pe)) / X_DUR;
+
+    S_GT_ENE_PS(gt,pe,st) = S_GT_POT_PS(gt,pe,st)*DUR_PS(pe,st);
+
+    S_GT_ENE_P(gt,pe) = SUM(st, S_GT_ENE_PS(gt,pe,st));
+
+    S_GT_ENE(gt) = SUM(pe, S_GT_ENE_P(gt,pe));
+
+*   Arranques y paradas de los grupos termicos
+
+    S_GT_ARR_PS(gt,pe,st) = SUM(st2, GT_ARR_PSS.L(gt,pe,st,st2));
+
+    S_GT_ARR_P(gt,pe) = SUM(st, S_GT_ARR_PS(gt,pe,st)) + GT_ARR_P.L(gt,pe);
+
+    S_GT_ARR(gt) = SUM(pe, S_GT_ARR_P(gt,pe));
+
+    S_GT_PAR_PS(gt,pe,st) = SUM(st2, GT_PAR_PSS.L(gt,pe,st,st2));
+
+    S_GT_PAR_P(gt,pe) = SUM(st, S_GT_PAR_PS(gt,pe,st)) + GT_PAR_P.L(gt,pe);
+
+    S_GT_PAR(gt) = SUM(pe, S_GT_PAR_P(gt,pe));
+
+*   Costos de los grupos termicos
+
+    S_GT_CARR_PS(gt,pe,st) = GT_COSTOS(gt,'gt_carr')*SUM(st2, TRAN_PSS(pe,st,st2)*GT_ARR_PSS.L(gt,pe,st,st2));
+
+    S_GT_CARR_P(gt,pe) = SUM(st, S_GT_CARR_PS(gt,pe,st)) + GT_COSTOS(gt,'gt_carr')*GT_ARR_P.L(gt,pe);
+
+    S_GT_CARR(gt) = SUM(pe, S_GT_CARR_P(gt,pe));
+
+    S_GT_CPAR_PS(gt,pe,st) = GT_COSTOS(gt,'gt_cpar')*SUM(st2, TRAN_PSS(pe,st,st2)*GT_PAR_PSS.L(gt,pe,st,st2));
+
+    S_GT_CPAR_P(gt,pe) = SUM(st, S_GT_CPAR_PS(gt,pe,st)) + GT_COSTOS(gt,'gt_cpar')*GT_PAR_P.L(gt,pe);
+
+    S_GT_CPAR(gt) = SUM(pe, S_GT_CPAR_P(gt,pe));
+
+    S_GT_CVCIO_PS(gt,pe,st) = GT_COSTOS(gt,'gt_cvacio')*DUR_PS(pe,st)*GT_ACO_PS.L(gt,pe,st);
+
+    S_GT_CVCIO_P(gt,pe) = SUM(st, S_GT_CVCIO_PS(gt,pe,st));
+
+    S_GT_CVCIO(gt) = SUM(pe, S_GT_CVCIO_P(gt,pe));
+
+    S_GT_CVAR_PS(gt,pe,st) = GT_CVAR_P(gt,pe)*DUR_PS(pe,st)*S_GT_POT_PS(gt,pe,st);
+
+    S_GT_CVAR_P(gt,pe) = SUM(st, S_GT_CVAR_PS(gt,pe,st));
+
+    S_GT_CVAR(gt) = SUM(pe, S_GT_CVAR_P(gt,pe));
+
+    S_GT_CTOT_PS(gt,pe,st) = S_GT_CARR_PS(gt,pe,st) + S_GT_CPAR_PS(gt,pe,st) + S_GT_CVCIO_PS(gt,pe,st) + S_GT_CVAR_PS(gt,pe,st);
+
+    S_GT_CTOT_P(gt,pe) = SUM(st, S_GT_CTOT_PS(gt,pe,st));
+
+    S_GT_CTOT(gt) = SUM(pe, S_GT_CTOT_P(gt,pe));
+
+*   Potencia y Energia de los grupos hidraulicos
+
+    S_GH_POT_PS(gh,pe,st) = GH_POT_PS.L(gh,pe,st);
+
+    S_GH_POT_P(gh,pe)$(X_DUR_P(pe)) = SUM(st, S_GH_POT_PS(gh,pe,st)*DUR_PS(pe,st)) / X_DUR_P(pe);
+
+    S_GH_POT(gh)$(X_DUR) = SUM(pe, S_GH_POT_P(gh,pe)*X_DUR_P(pe)) / X_DUR;
+
+    S_GH_POTBOM_PS(gh,pe,st) = GH_BOM_PS.L(gh,pe,st);
+
+    S_GH_POTBOM_P(gh,pe)$(X_DUR_P(pe)) = SUM(st, S_GH_POTBOM_PS(gh,pe,st)*DUR_PS(pe,st)) / X_DUR_P(pe);
+
+    S_GH_POTBOM(gh)$(X_DUR) = SUM(pe, S_GH_POTBOM_P(gh,pe)*X_DUR_P(pe)) / X_DUR;
+
+    S_GH_ENE_PS(gh,pe,st) = S_GH_POT_PS(gh,pe,st)*DUR_PS(pe,st);
+
+    S_GH_ENE_P(gh,pe) = SUM(st, S_GH_ENE_PS(gh,pe,st));
+
+    S_GH_ENE(gh) = SUM(pe, S_GH_ENE_P(gh,pe));
+
+    S_GH_ENEBOM_PS(gh,pe,st) = S_GH_POTBOM_PS(gh,pe,st)*DUR_PS(pe,st);
+
+    S_GH_ENEBOM_P(gh,pe) = SUM(st, S_GH_ENEBOM_PS(gh,pe,st));
+
+    S_GH_ENEBOM(gh) = SUM(pe, S_GH_ENEBOM_P(gh,pe));
+
+    S_GH_VE_P(gh,pe) = GH_VE_P.L(gh,pe);
+
+    S_GH_RES_P(gh,pe) = GH_RES_P.L(gh,pe);
+
+    S_GH_APOSINF_P(gh,gh2,pe) = GH_EQUI_P.L(gh,pe) * GH_SUP_GH(gh,gh2);
+
+    S_GH_VAGUA_P(gh,pe) = R_GH_BALHID_P.M(gh,pe);
+
+    S_GH_VAGUA(gh)$(X_DUR) = SUM((pe,st), S_GH_VAGUA_P(gh,pe)*DUR_PS(pe,st)) / X_DUR;
+
+*   Potencia y Energia de los agentes marginalistas
+
+    S_AMV_POT_PS(amv,pe,st) = AMV_POT_PS.L(amv,pe,st);
+
+    S_AMV_POT_P(amv,pe)$(X_DUR_P(pe)) = SUM(st, S_AMV_POT_PS(amv,pe,st) *DUR_PS(pe,st)) / X_DUR_P(pe);
+
+    S_AMV_POT(amv)$(X_DUR) = SUM(pe, S_AMV_POT_P(amv,pe)*X_DUR_P(pe)) / X_DUR;
+
+    S_AMC_POT_PS(amc,pe,st) = AMC_POT_PS.L(amc,pe,st);
+
+    S_AMC_POT_P(amc,pe)$(X_DUR_P(pe)) = SUM(st, S_AMC_POT_PS(amc,pe,st) *DUR_PS(pe,st)) / X_DUR_P(pe);
+
+    S_AMC_POT(amc)$(X_DUR) = SUM(pe, S_AMC_POT_P(amc,pe)*X_DUR_P(pe)) / X_DUR;
+
+    S_AMV_ENE_PS(amv,pe,st) = S_AMV_POT_PS(amv,pe,st)*DUR_PS(pe,st);
+
+    S_AMV_ENE_P(amv,pe) = SUM(st, S_AMV_ENE_PS(amv,pe,st));
+
+    S_AMV_ENE(amv) = SUM(pe, S_AMV_ENE_P(amv,pe));
+
+    S_AMC_ENE_PS(amc,pe,st) = S_AMC_POT_P(amc,pe)*DUR_PS(pe,st);
+
+    S_AMC_ENE_P(amc,pe) = SUM(st, S_AMC_ENE_PS(amc,pe,st));
+
+    S_AMC_ENE(amc) = SUM(pe, S_AMC_ENE_P(amc,pe));
+
+*   Ingresos y costos de la empresa
+
+    S_EM_CARR_PS(em,pe,st) = SUM(gt, GT_PERT_EM(gt,em)*S_GT_CARR_PS(gt,pe,st));
+
+    S_EM_CARR_P(em,pe) = SUM(gt, GT_PERT_EM(gt,em)*S_GT_CARR_P(gt,pe));
+
+    S_EM_CARR(em) = SUM(pe, S_EM_CARR_P(em,pe));
+
+    S_EM_CPAR_PS(em,pe,st) = SUM(gt, GT_PERT_EM(gt,em)*S_GT_CPAR_PS(gt,pe,st));
+
+    S_EM_CPAR_P(em,pe) = SUM(gt, GT_PERT_EM(gt,em)*S_GT_CPAR_P(gt,pe));
+
+    S_EM_CPAR(em) = SUM(pe, S_EM_CPAR_P(em,pe));
+
+    S_EM_CVCIO_PS(em,pe,st) = SUM(gt, GT_PERT_EM(gt,em)*S_GT_CVCIO_PS(gt,pe,st));
+
+    S_EM_CVCIO_P(em,pe) = SUM(st, S_EM_CVCIO_PS(em,pe,st));
+
+    S_EM_CVCIO(em) = SUM(pe, S_EM_CVCIO_P(em,pe));
+
+    S_EM_CVAR_PS(em,pe,st) = SUM(gt, GT_PERT_EM(gt,em)*S_GT_CVAR_PS(gt,pe,st));
+
+    S_EM_CVAR_P(em,pe) = SUM(st, S_EM_CVAR_PS(em,pe,st));
+
+    S_EM_CVAR(em) = SUM(pe, S_EM_CVAR_P(em,pe));
+
+    S_EM_CTOT_PS(em,pe,st) = S_EM_CARR_PS(em,pe,st) + S_EM_CPAR_PS(em,pe,st) + S_EM_CVCIO_PS(em,pe,st) + S_EM_CVAR_PS(em,pe,st);
+
+    S_EM_CTOT_P(em,pe) = S_EM_CARR_P(em,pe) + S_EM_CPAR_P(em,pe) + S_EM_CVCIO_P(em,pe) + S_EM_CVAR_P(em,pe);
+
+    S_EM_CTOT(em) = SUM(pe, S_EM_CTOT_P(em,pe));
+
+    IF((OPT_RED EQ 1),
+        S_EM_ING_PS(em,pe,st) = DUR_PS(pe,st)*SUM(nd, S_PCIO_NPS(nd,pe,st)*
+                                        ( SUM(gt$(GT_PERT_EM(gt,em) AND (GT_LOCA_ND(gt,nd))), S_GT_POT_PS(gt,pe,st))
+                                        + SUM(gh$(GH_PERT_EM(gh,em) AND (GH_LOCA_ND(gh,nd))), S_GH_POT_PS(gh,pe,st) - S_GH_POTBOM_PS(gh,pe,st)) ));
+    ELSE
+        S_EM_ING_PS(em,pe,st) = DUR_PS(pe,st)*S_EM_POT_PS(em,pe,st)*S_PCIO_PS(pe,st);
+    );
+
+    S_EM_ING_P(em,pe) = SUM(st, S_EM_ING_PS(em,pe,st));
+
+    S_EM_ING(em) = SUM(pe, S_EM_ING_P(em,pe));
+
+*   Para el calculo con opcion de red, el beneficio no esta calculado correctamente en la
+*   parte de los contratos, ya que se utiliza un precio medio y no el precio de cada nodo
+    S_EM_BEN_PS(em,pe,st) = S_EM_ING_PS(em,pe,st) - S_EM_CTOT_PS(em,pe,st)
+                            + (EM_CDIFPCIO_PS(em,pe,st)-S_PCIO_PS(pe,st))*EM_CDIFPOT_PS(em,pe,st)
+                            + (EM_CBILPCIO_PS(em,pe,st)-S_PCIO_PS(pe,st))*EM_CBILPOT_PS(em,pe,st);
+
+    S_EM_BEN_P(em,pe) = S_EM_ING_P(em,pe) - S_EM_CTOT_P(em,pe);
+
+    S_EM_BEN(em) = SUM(pe, S_EM_BEN_P(em,pe));
+
+****Fin Calculo
+
+** Para los valores cero
+    S_DEM_POT_NPS(nd,pe,st)$(NOT S_DEM_POT_NPS(nd,pe,st)) = 1e-6;
+    S_DEM_POT_PS(pe,st)$(NOT S_DEM_POT_PS(pe,st)) = 1e-6;
+    S_DEM_POT_P(pe)$(NOT S_DEM_POT_P(pe)) = 1e-6;
+    S_DEM_POT(aux)$(NOT S_DEM_POT(aux)) = 1e-6;
+    S_DNS_POT_NPS(nd,pe,st)$(NOT S_DNS_POT_NPS(nd,pe,st)) = 1e-6;
+    S_DNS_POT_PS(pe,st)$(NOT S_DNS_POT_PS(pe,st)) = 1e-6;
+    S_DNS_POT_P(pe)$(NOT S_DNS_POT_P(pe)) = 1e-6;
+    S_DNS_POT(aux)$(NOT S_DNS_POT(aux)) = 1e-6;
+    S_DEM_ENE_PS(pe,st)$(NOT S_DEM_ENE_PS(pe,st)) = 1e-6;
+    S_DEM_ENE_P(pe)$(NOT S_DEM_ENE_P(pe)) = 1e-6;
+    S_DEM_ENE(aux)$(NOT S_DEM_ENE(aux)) = 1e-6;
+    S_DNS_ENE_PS(pe,st)$(NOT S_DNS_ENE_PS(pe,st)) = 1e-6;
+    S_DNS_ENE_P(pe)$(NOT S_DNS_ENE_P(pe)) = 1e-6;
+    S_DNS_ENE(aux)$(NOT S_DNS_ENE(aux)) = 1e-6;
+    S_PCIO_NPS(nd,pe,st)$(NOT S_PCIO_NPS(nd,pe,st)) = 1e-6;
+    S_PCIO_PS(pe,st)$(NOT S_PCIO_PS(pe,st)) = 1e-6;
+    S_PCIO_P(pe)$(NOT S_PCIO_P(pe)) = 1e-6;
+    S_PCIOPOND_P(pe)$(NOT S_PCIOPOND_P(pe)) = 1e-6;
+    S_PCIO(aux)$(NOT S_PCIO(aux)) = 1e-6;
+    S_PCIOPOND(aux)$(NOT S_PCIOPOND(aux)) = 1e-6;
+    S_FLUJO_PS(nd,nd2,pe,st)$(NOT S_FLUJO_PS(nd,nd2,pe,st)) = 1e-6;
+    S_EM_POT_PS(em,pe,st)$(NOT S_EM_POT_PS(em,pe,st)) = 1e-6;
+    S_EM_POT_P(em,pe)$(NOT S_EM_POT_P(em,pe)) = 1e-6;
+    S_EM_POT(em)$(NOT S_EM_POT(em)) = 1e-6;
+    S_EM_POTPOS_PS(em,pe,st)$(NOT S_EM_POTPOS_PS(em,pe,st)) = 1e-6;
+    S_EM_POTPOS_P(em,pe)$(NOT S_EM_POTPOS_P(em,pe)) = 1e-6;
+    S_EM_POS(em)$(NOT S_EM_POS(em)) = 1e-6;
+    S_EM_ENE_PS(em,pe,st)$(NOT S_EM_ENE_PS(em,pe,st)) = 1e-6;
+    S_EM_ENE_P(em,pe)$(NOT S_EM_ENE_P(em,pe)) = 1e-6;
+    S_EM_ENE(em)$(NOT S_EM_ENE(em)) = 1e-6;
+    S_EM_ENEPOS_PS(em,pe,st)$(NOT S_EM_ENEPOS_PS(em,pe,st)) = 1e-6;
+    S_EM_ENEPOS_P(em,pe)$(NOT S_EM_ENEPOS_P(em,pe)) = 1e-6;
+    S_EM_POS(em)$(NOT S_EM_POS(em)) = 1e-6;
+    S_EM_BEN_PS(em,pe,st)$(NOT S_EM_BEN_PS(em,pe,st)) = 1e-6;
+    S_EM_BEN_P(em,pe)$(NOT S_EM_BEN_P(em,pe)) = 1e-6;
+    S_EM_BEN(em)$(NOT S_EM_BEN(em)) = 1e-6;
+    S_EM_ING_PS(em,pe,st)$(NOT S_EM_ING_PS(em,pe,st)) = 1e-6;
+    S_EM_ING_P(em,pe)$(NOT S_EM_ING_P(em,pe)) = 1e-6;
+    S_EM_ING(em)$(NOT S_EM_ING(em)) = 1e-6;
+    S_EM_CARR_PS(em,pe,st)$(NOT S_EM_CARR_PS(em,pe,st)) = 1e-6;
+    S_EM_CARR_P(em,pe)$(NOT S_EM_CARR_P(em,pe)) = 1e-6;
+    S_EM_CARR(em)$(NOT S_EM_CARR(em)) = 1e-6;
+    S_EM_CPAR_PS(em,pe,st)$(NOT S_EM_CPAR_PS(em,pe,st)) = 1e-6;
+    S_EM_CPAR_P(em,pe)$(NOT S_EM_CPAR_P(em,pe)) = 1e-6;
+    S_EM_CPAR(em)$(NOT S_EM_CPAR(em)) = 1e-6;
+    S_EM_CVCIO_PS(em,pe,st)$(NOT S_EM_CVCIO_PS(em,pe,st)) = 1e-6;
+    S_EM_CVCIO_P(em,pe)$(NOT S_EM_CVCIO_P(em,pe)) = 1e-6;
+    S_EM_CVCIO(em)$(NOT S_EM_CVCIO(em)) = 1e-6;
+    S_EM_CVAR_PS(em,pe,st)$(NOT S_EM_CVAR_PS(em,pe,st)) = 1e-6;
+    S_EM_CVAR_P(em,pe)$(NOT S_EM_CVAR_P(em,pe)) = 1e-6;
+    S_EM_CVAR(em)$(NOT S_EM_CVAR(em)) = 1e-6;
+    S_EM_CTOT_PS(em,pe,st)$(NOT S_EM_CTOT_PS(em,pe,st)) = 1e-6;
+    S_EM_CTOT_P(em,pe)$(NOT S_EM_CTOT_P(em,pe)) = 1e-6;
+    S_EM_CTOT(em)$(NOT S_EM_CTOT(em)) = 1e-6;
+    S_GT_POT_PS(gt,pe,st)$(NOT S_GT_POT_PS(gt,pe,st)) = 1e-6;
+    S_GT_POT_P(gt,pe)$(NOT S_GT_POT_P(gt,pe)) = 1e-6;
+    S_GT_POT(gt)$(NOT S_GT_POT(gt)) = 1e-6;
+    S_GT_ENE_PS(gt,pe,st)$(NOT S_GT_ENE_PS(gt,pe,st)) = 1e-6;
+    S_GT_ENE_P(gt,pe)$(NOT S_GT_ENE_P(gt,pe)) = 1e-6;
+    S_GT_ENE(gt)$(NOT S_GT_ENE(gt)) = 1e-6;
+    S_GT_ARR_PS(gt,pe,st)$(NOT S_GT_ARR_PS(gt,pe,st)) = 1e-6;
+    S_GT_ARR_P(gt,pe)$(NOT S_GT_ARR_P(gt,pe)) = 1e-6;
+    S_GT_ARR(gt)$(NOT S_GT_ARR(gt)) = 1e-6;
+    S_GT_PAR_PS(gt,pe,st)$(NOT S_GT_PAR_PS(gt,pe,st)) = 1e-6;
+    S_GT_PAR_P(gt,pe)$(NOT S_GT_PAR_P(gt,pe)) = 1e-6;
+    S_GT_PAR(gt)$(NOT S_GT_PAR(gt)) = 1e-6;
+    S_GT_CARR_PS(gt,pe,st)$(NOT S_GT_CARR_PS(gt,pe,st)) = 1e-6;
+    S_GT_CARR_P(gt,pe)$(NOT S_GT_CARR_P(gt,pe)) = 1e-6;
+    S_GT_CARR(gt)$(NOT S_GT_CARR(gt)) = 1e-6;
+    S_GT_CPAR_PS(gt,pe,st)$(NOT S_GT_CPAR_PS(gt,pe,st)) = 1e-6;
+    S_GT_CPAR_P(gt,pe)$(NOT S_GT_CPAR_P(gt,pe)) = 1e-6;
+    S_GT_CPAR(gt)$(NOT S_GT_CPAR(gt)) = 1e-6;
+    S_GT_CVCIO_PS(gt,pe,st)$(NOT S_GT_CVCIO_PS(gt,pe,st)) = 1e-6;
+    S_GT_CVCIO_P(gt,pe)$(NOT S_GT_CVCIO_P(gt,pe)) = 1e-6;
+    S_GT_CVCIO(gt)$(NOT S_GT_CVCIO(gt)) = 1e-6;
+    S_GT_CVAR_PS(gt,pe,st)$(NOT S_GT_CVAR_PS(gt,pe,st)) = 1e-6;
+    S_GT_CVAR_P(gt,pe)$(NOT S_GT_CVAR_P(gt,pe)) = 1e-6;
+    S_GT_CVAR(gt)$(NOT S_GT_CVAR(gt)) = 1e-6;
+    S_GT_CTOT_PS(gt,pe,st)$(NOT S_GT_CTOT_PS(gt,pe,st)) = 1e-6;
+    S_GT_CTOT_P(gt,pe)$(NOT S_GT_CTOT_P(gt,pe)) = 1e-6;
+    S_GT_CTOT(gt)$(NOT S_GT_CTOT(gt)) = 1e-6;
+    S_GH_POT_PS(gh,pe,st)$(NOT S_GH_POT_PS(gh,pe,st)) = 1e-6;
+    S_GH_POT_P(gh,pe)$(NOT S_GH_POT_P(gh,pe)) = 1e-6;
+    S_GH_POT(gh)$(NOT S_GH_POT(gh)) = 1e-6;
+    S_GH_POTBOM_PS(gh,pe,st)$(NOT S_GH_POTBOM_PS(gh,pe,st)) = 1e-6;
+    S_GH_POTBOM_P(gh,pe)$(NOT S_GH_POTBOM_P(gh,pe)) = 1e-6;
+    S_GH_POTBOM(gh)$(NOT S_GH_POTBOM(gh)) = 1e-6;
+    S_GH_ENE_PS(gh,pe,st)$(NOT S_GH_ENE_PS(gh,pe,st)) = 1e-6;
+    S_GH_ENE_P(gh,pe)$(NOT S_GH_ENE_P(gh,pe)) = 1e-6;
+    S_GH_ENE(gh)$(NOT S_GH_ENE(gh)) = 1e-6;
+    S_GH_ENEBOM_PS(gh,pe,st)$(NOT S_GH_ENEBOM_PS(gh,pe,st)) = 1e-6;
+    S_GH_ENEBOM_P(gh,pe)$(NOT S_GH_ENEBOM_P(gh,pe)) = 1e-6;
+    S_GH_ENEBOM(gh)$(NOT S_GH_ENEBOM(gh)) = 1e-6;
+    S_GH_VE_P(gh,pe)$(NOT S_GH_VE_P(gh,pe)) = 1e-6;
+    S_GH_RES_P(gh,pe)$(NOT S_GH_RES_P(gh,pe)) = 1e-6;
+    S_GH_APOSINF_P(gh,gh2,pe)$(NOT S_GH_APOSINF_P(gh,gh2,pe)) = 1e-6;
+    S_GH_VAGUA_P(gh,pe)$(NOT S_GH_VAGUA_P(gh,pe)) = 1e-6;
+    S_GH_VAGUA(gh)$(NOT S_GH_VAGUA(gh)) = 1e-6;
+    S_AMV_POT_PS(amv,pe,st)$(NOT S_AMV_POT_PS(amv,pe,st)) = 1e-6;
+    S_AMV_POT_P(amv,pe)$(NOT S_AMV_POT_P(amv,pe)) = 1e-6;
+    S_AMV_POT(amv)$(NOT S_AMV_POT(amv)) = 1e-6;
+    S_AMC_POT_PS(amc,pe,st)$(NOT S_AMC_POT_PS(amc,pe,st)) = 1e-6;
+    S_AMC_POT_P(amc,pe)$(NOT S_AMC_POT_P(amc,pe)) = 1e-6;
+    S_AMC_POT(amc)$(NOT S_AMC_POT(amc)) = 1e-6;
+    S_AMV_ENE_PS(amv,pe,st)$(NOT S_AMV_ENE_PS(amv,pe,st)) = 1e-6;
+    S_AMV_ENE_P(amv,pe)$(NOT S_AMV_ENE_P(amv,pe)) = 1e-6;
+    S_AMV_ENE(amv)$(NOT S_AMV_ENE(amv)) = 1e-6;
+    S_AMC_ENE_PS(amc,pe,st)$(NOT S_AMC_ENE_PS(amc,pe,st)) = 1e-6;
+    S_AMC_ENE_P(amc,pe)$(NOT S_AMC_ENE_P(amc,pe)) = 1e-6;
+    S_AMC_ENE(amc)$(NOT S_AMC_ENE(amc)) = 1e-6;
+
+** Guarda los parametros de salida
+execute_unload 'salidas.gdx'
+
+    S_DEM_POT_NPS,
+    S_DEM_POT_PS,
+    S_DEM_POT_P,
+    S_DEM_POT,
+    S_DNS_POT_NPS,
+    S_DNS_POT_PS,
+    S_DNS_POT_P,
+    S_DNS_POT,
+    S_DEM_ENE_PS,
+    S_DEM_ENE_P,
+    S_DEM_ENE,
+    S_DNS_ENE_PS,
+    S_DNS_ENE_P,
+    S_DNS_ENE,
+    S_PCIO_NPS,
+    S_PCIO_PS,
+    S_PCIO_P,
+    S_PCIOPOND_P,
+    S_PCIO,
+    S_PCIOPOND,
+    S_FLUJO_PS,
+    S_EM_POT_PS,
+    S_EM_POT_P,
+    S_EM_POT,
+    S_EM_POTPOS_PS,
+    S_EM_POTPOS_P,
+    S_EM_POS,
+    S_EM_ENE_PS,
+    S_EM_ENE_P,
+    S_EM_ENE,
+    S_EM_ENEPOS_PS,
+    S_EM_ENEPOS_P,
+    S_EM_ENEPOS,
+    S_EM_BEN_PS,
+    S_EM_BEN_P,
+    S_EM_BEN,
+    S_EM_ING_PS,
+    S_EM_ING_P,
+    S_EM_ING,
+    S_EM_CARR_PS,
+    S_EM_CARR_P,
+    S_EM_CARR,
+    S_EM_CPAR_PS,
+    S_EM_CPAR_P,
+    S_EM_CPAR,
+    S_EM_CVCIO_PS,
+    S_EM_CVCIO_P,
+    S_EM_CVCIO,
+    S_EM_CVAR_PS,
+    S_EM_CVAR_P,
+    S_EM_CVAR,
+    S_EM_CTOT_PS,
+    S_EM_CTOT_P,
+    S_EM_CTOT,
+    S_GT_POT_PS,
+    S_GT_POT_P,
+    S_GT_POT,
+    S_GT_ENE_PS,
+    S_GT_ENE_P,
+    S_GT_ENE,
+    S_GT_ARR_PS
+    S_GT_ARR_P
+    S_GT_ARR
+    S_GT_PAR_PS
+    S_GT_PAR_P
+    S_GT_PAR
+    S_GT_CARR_PS,
+    S_GT_CARR_P,
+    S_GT_CARR,
+    S_GT_CPAR_PS,
+    S_GT_CPAR_P,
+    S_GT_CPAR,
+    S_GT_CVCIO_PS,
+    S_GT_CVCIO_P,
+    S_GT_CVCIO,
+    S_GT_CVAR_PS,
+    S_GT_CVAR_P,
+    S_GT_CVAR,
+    S_GT_CTOT_PS,
+    S_GT_CTOT_P,
+    S_GT_CTOT,
+    S_GH_POT_PS,
+    S_GH_POT_P,
+    S_GH_POT,
+    S_GH_POTBOM_PS,
+    S_GH_POTBOM_P,
+    S_GH_POTBOM,
+    S_GH_ENE_PS,
+    S_GH_ENE_P,
+    S_GH_ENE,
+    S_GH_ENEBOM_PS,
+    S_GH_ENEBOM_P,
+    S_GH_ENEBOM,
+    S_GH_VE_P,
+    S_GH_RES_P,
+    S_GH_APOSINF_P,
+    S_GH_VAGUA_P,
+    S_GH_VAGUA,
+    S_AMV_POT_PS,
+    S_AMV_POT_P,
+    S_AMV_POT,
+    S_AMC_POT_PS,
+    S_AMC_POT_P,
+    S_AMC_POT,
+    S_AMV_ENE_PS,
+    S_AMV_ENE_P,
+    S_AMV_ENE,
+    S_AMC_ENE_PS,
+    S_AMC_ENE_P,
+    S_AMC_ENE
+;

@@ -1,0 +1,8 @@
+/
+nodo1.nodo2 1000
+nodo1.nodo3 1000
+nodo2.nodo1 1000
+nodo2.nodo3 1000
+nodo3.nodo1 1000
+nodo3.nodo2 1000
+/;

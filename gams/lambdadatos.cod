@@ -1,0 +1,261 @@
+* Fichero de opciones
+$include './datos/opt_lambda.dat'
+
+* Ficheros con los sets
+$if exist ' ./datos/id_pe.dat'          SET PE
+$if exist ' ./datos/id_pe.dat'          $include ' ./datos/id_pe.dat' ;
+$if not exist ' ./datos/id_pe.dat'      SET PE /NULL/ ;
+
+$if exist ' ./datos/id_st.dat'          SET ST
+$if exist ' ./datos/id_st.dat'          $include ' ./datos/id_st.dat' ;
+$if not exist ' ./datos/id_st.dat'      SET ST /NULL/ ;
+
+$if exist ' ./datos/id_gt.dat'          SET GT
+$if exist ' ./datos/id_gt.dat'          $include ' ./datos/id_gt.dat' ;
+$if not exist ' ./datos/id_gt.dat'      SET GT /NULL/ ;
+
+$if exist ' ./datos/id_gh.dat'          SET GH
+$if exist ' ./datos/id_gh.dat'          $include ' ./datos/id_gh.dat' ;
+$if not exist ' ./datos/id_gh.dat'      SET GH /NULL/ ;
+
+$if exist ' ./datos/id_em.dat'          SET EM
+$if exist ' ./datos/id_em.dat'          $include ' ./datos/id_em.dat' ;
+$if not exist ' ./datos/id_em.dat'      SET EM /NULL/ ;
+
+$if exist ' ./datos/id_amv.dat'         SET AMV
+$if exist ' ./datos/id_amv.dat'         $include ' ./datos/id_amv.dat' ;
+$if not exist ' ./datos/id_amv.dat'     SET AMV /NULL/ ;
+
+$if exist ' ./datos/id_amc.dat'         SET AMC
+$if exist ' ./datos/id_amc.dat'         $include ' ./datos/id_amc.dat' ;
+$if not exist ' ./datos/id_amc.dat'     SET AMC /NULL/ ;
+
+$if exist ' ./datos/id_nd.dat'          SET ND
+$if exist ' ./datos/id_nd.dat'          $include ' ./datos/id_nd.dat' ;
+$if not exist ' ./datos/id_nd.dat'      SET ND /NULL/ ;
+
+* Parametros temporales
+*   Duracion de los estados
+$if exist ' ./datos/dur_ps.dat'         PARAMETER DUR_PS(pe,st)
+$if exist ' ./datos/dur_ps.dat'         $include ' ./datos/dur_ps.dat'
+$if not exist ' ./datos/dur_ps.dat'     DUR_PS(pe,st) = 0 ;
+
+*   Matriz de transicion entre estados
+$if exist ' ./datos/tran_pss.dat'       PARAMETER TRAN_PSS(pe,st,st2)
+$if exist ' ./datos/tran_pss.dat'       $include ' ./datos/tran_pss.dat'
+$if not exist ' ./datos/tran_pss.dat'   TRAN_PSS(pe,st,st2) = 0 ;
+
+*   Caracteristicas de los estados
+$if exist ' ./datos/carac_ps.dat'       PARAMETER CARAC_PS(pe,st,d_st1)
+$if exist ' ./datos/carac_ps.dat'       $include ' ./datos/carac_ps.dat'
+$if not exist ' ./datos/carac_ps.dat'   CARAC_PS(pe,st,d_st1) = 0 ;
+
+* Parametros de la red
+$if exist ' ./datos/red_reac.dat'       PARAMETER RED_REAC(nd,nd2)
+$if exist ' ./datos/red_reac.dat'       $include ' ./datos/red_reac.dat'
+$if not exist ' ./datos/red_reac.dat'   RED_REAC(nd,nd2) = 0 ;
+   
+$if exist ' ./datos/red_caplin.dat'     PARAMETER RED_CAPLIN(nd,nd2)
+$if exist ' ./datos/red_caplin.dat'     $include ' ./datos/red_caplin.dat'
+$if not exist ' ./datos/red_caplin.dat' RED_CAPLIN(nd,nd2) = 0 ;
+
+* Parametros de las empresa
+* Variacion conjetural del precio del sistema respecto a la produccion de la empresa en el periodo y estado
+$if exist ' ./datos/em_theta_ps.dat'        PARAMETER EM_THETA_PS(em,pe,st)
+$if exist ' ./datos/em_theta_ps.dat'        $include ' ./datos/em_theta_ps.dat'
+$if not exist ' ./datos/em_theta_ps.dat'    EM_THETA_PS(em,pe,st) = 0 ;
+
+*   Precio de los contratos bilaterales firmados por el empresa en el periodo y estado
+$if exist ' ./datos/em_cbilpcio_ps.dat'     PARAMETER EM_CBILPCIO_PS(em,pe,st)
+$if exist ' ./datos/em_cbilpcio_ps.dat'     $include ' ./datos/em_cbilpcio_ps.dat'
+$if not exist ' ./datos/em_cbilpcio_ps.dat' EM_CBILPCIO_PS(em,pe,st) = 0 ;
+
+*   Potencia de los contratos bilaterales de la empresa en el periodo y estado
+$if exist ' ./datos/em_cbilpot_ps.dat'      PARAMETER EM_CBILPOT_PS(em,pe,st)
+$if exist ' ./datos/em_cbilpot_ps.dat'      $include ' ./datos/em_cbilpot_ps.dat'
+$if not exist ' ./datos/em_cbilpot_ps.dat'  EM_CBILPOT_PS(em,pe,st) = 0 ;
+
+*   Precio de los contratos por diferencias firmados por el empresa en el periodo y estado
+$if exist ' ./datos/em_cdifpcio_ps.dat'     PARAMETER EM_CDIFPCIO_PS(em,pe,st)
+$if exist ' ./datos/em_cdifpcio_ps.dat'     $include ' ./datos/em_cdifpcio_ps.dat'
+$if not exist ' ./datos/em_cdifpcio_ps.dat' EM_CDIFPCIO_PS(em,pe,st) = 0 ;
+
+*   Potencia de los contratos por diferencias de la empresa en el periodo y estado
+$if exist ' ./datos/em_cdifpot_ps.dat'      PARAMETER EM_CDIFPOT_PS(em,pe,st)
+$if exist ' ./datos/em_cdifpot_ps.dat'      $include ' ./datos/em_cdifpot_ps.dat'
+$if not exist ' ./datos/em_cdifpot_ps.dat'  EM_CDIFPOT_PS(em,pe,st) = 0 ;
+       
+*   Cuota minima de produccion de la empresa 
+$if exist ' ./datos/em_cuota.dat'           PARAMETER EM_CUOTA(em,d_em1)
+$if exist ' ./datos/em_cuota.dat'           $include ' ./datos/em_cuota.dat'
+$if not exist ' ./datos/em_cuota.dat'       EM_CUOTA(em,d_em1) = 0 ;
+
+* Parametros de los grupos termicos
+*   Caracteristicas del grupo termico
+$if exist ' ./datos/gt_carac.dat'       PARAMETER GT_CARAC(gt,d_gt1)
+$if exist ' ./datos/gt_carac.dat'       $include ' ./datos/gt_carac.dat'
+$if not exist ' ./datos/gt_carac.dat'   GT_CARAC(gt,d_gt1) = 0 ;
+
+*   Costos del grupo termico
+$if exist ' ./datos/gt_costos.dat'      PARAMETER GT_COSTOS(gt,d_gt2)
+$if exist ' ./datos/gt_costos.dat'      $include ' ./datos/gt_costos.dat'
+$if not exist ' ./datos/gt_costos.dat'  GT_COSTOS(gt,d_gt2) = 0 ;
+
+*   Costo variable del grupo termico por periodo
+$if exist ' ./datos/gt_cvar_p.dat'      PARAMETER GT_CVAR_P(gt,pe)
+$if exist ' ./datos/gt_cvar_p.dat'      $include ' ./datos/gt_cvar_p.dat'
+$if not exist ' ./datos/gt_cvar_p.dat'  GT_CVAR_P(gt,pe) = 0 ;
+                 
+*   Coeficiente de disponibilidad del grupo termico por periodo
+$if exist ' ./datos/gt_coefdisp_p.dat'      PARAMETER GT_COEFDISP_P(gt,pe)
+$if exist ' ./datos/gt_coefdisp_p.dat'      $include ' ./datos/gt_coefdisp_p.dat'
+$if not exist ' ./datos/gt_coefdisp_p.dat'  GT_COEFDISP_P(gt,pe) = 0 ;
+
+*   Energia maxima que debe producir el grupo por periodo
+$if exist ' ./datos/gt_emax_p.dat'      PARAMETER GT_EMAX_P(gt,pe)
+$if exist ' ./datos/gt_emax_p.dat'      $include ' ./datos/gt_emax_p.dat'
+$if not exist ' ./datos/gt_emax_p.dat'  GT_EMAX_P(gt,pe) = 0 ;
+
+*   Energia minima que debe producir el grupo por periodo
+$if exist ' ./datos/gt_emin_p.dat'      PARAMETER GT_EMIN_P(gt,pe)
+$if exist ' ./datos/gt_emin_p.dat'      $include ' ./datos/gt_emin_p.dat'
+$if not exist ' ./datos/gt_emin_p.dat'  GT_EMIN_P(gt,pe) = 0 ;
+
+*   Energia maxima y minima que debe producir el grupo a lo largo de todo el horizonte
+$if exist ' ./datos/gt_ener.dat'        PARAMETER GT_ENER(gt,d_gt3)
+$if exist ' ./datos/gt_ener.dat'        $include ' ./datos/gt_ener.dat'
+$if not exist ' ./datos/gt_ener.dat'    GT_ENER(gt,d_gt3) = 0 ;
+
+*   Pertencia del grupo termico a la empresa
+$if exist ' ./datos/gt_pert_em.dat'     PARAMETER GT_PERT_EM(gt,em)
+$if exist ' ./datos/gt_pert_em.dat'     $include ' ./datos/gt_pert_em.dat'
+$if not exist ' ./datos/gt_pert_em.dat' GT_PERT_EM(gt,em) = 0 ;
+
+*   Localizacion del grupo termico
+$if exist ' ./datos/gt_loca_nd.dat'     PARAMETER GT_LOCA_ND(gt,nd)
+$if exist ' ./datos/gt_loca_nd.dat'     $include ' ./datos/gt_loca_nd.dat'
+$if not exist ' ./datos/gt_loca_nd.dat' GT_LOCA_ND(gt,nd) = 0 ;
+
+* Parametros de los grupos hidraulicos
+*   Caracteristicas del grupo termico
+$if exist ' ./datos/gh_carac.dat'       PARAMETER GH_CARAC(gh,d_gh1)
+$if exist ' ./datos/gh_carac.dat'       $include ' ./datos/gh_carac.dat'
+$if not exist ' ./datos/gh_carac.dat'   GH_CARAC(gh,d_gh1) = 0 ;
+
+*   Aportaciones hidricas del grupo hidraulico recibidas por periodo
+$if exist ' ./datos/gh_apor_p.dat'      PARAMETER GH_APOR_P(gh,pe)
+$if exist ' ./datos/gh_apor_p.dat'      $include ' ./datos/gh_apor_p.dat'
+$if not exist ' ./datos/gh_apor_p.dat'  GH_APOR_P(gh,pe) = 0 ;
+
+*   Potencia maxima de bombeo del grupo hidraulico por periodo
+$if exist ' ./datos/gh_bmax_p.dat'      PARAMETER GH_BMAX_P(gh,pe)
+$if exist ' ./datos/gh_bmax_p.dat'      $include ' ./datos/gh_bmax_p.dat'
+$if not exist ' ./datos/gh_bmax_p.dat'  GH_BMAX_P(gh,pe) = 0 ;
+                  
+*   Potencia fluyente del grupo hidraulico por periodo y estado
+$if exist ' ./datos/gh_pflu_ps.dat'     PARAMETER GH_PFLU_PS(gh,pe,st)
+$if exist ' ./datos/gh_pflu_ps.dat'     $include ' ./datos/gh_pflu_ps.dat'
+$if not exist ' ./datos/gh_pflu_ps.dat' GH_PFLU_PS(gh,pe,st) = 0 ;
+                  
+*   Produccion minima obligada del grupo hidraulico por periodo
+$if exist ' ./datos/gh_pobli_p.dat'     PARAMETER GH_POBLI_P(gh,pe)
+$if exist ' ./datos/gh_pobli_p.dat'     $include ' ./datos/gh_pobli_p.dat'
+$if not exist ' ./datos/gh_pobli_p.dat' GH_POBLI_P(gh,pe) = 0 ;
+                  
+*   Reserva maxima del grupo hidraulico por periodo
+$if exist ' ./datos/gh_rmax_p.dat'      PARAMETER GH_RMAX_P(gh,pe)
+$if exist ' ./datos/gh_rmax_p.dat'      $include ' ./datos/gh_rmax_p.dat'
+$if not exist ' ./datos/gh_rmax_p.dat'  GH_RMAX_P(gh,pe) = 0 ;
+                  
+*   Reserva minima del grupo hidraulico por periodo
+$if exist ' ./datos/gh_rmin_p.dat'      PARAMETER GH_RMIN_P(gh,pe)
+$if exist ' ./datos/gh_rmin_p.dat'      $include ' ./datos/gh_rmin_p.dat'
+$if not exist ' ./datos/gh_rmin_p.dat'  GH_RMIN_P(gh,pe) = 0 ;
+
+*   Pertencia del grupo hidraulico a la empresa
+$if exist ' ./datos/gh_pert_em.dat'     PARAMETER GH_PERT_EM(gh,em)
+$if exist ' ./datos/gh_pert_em.dat'     $include ' ./datos/gh_pert_em.dat'
+$if not exist ' ./datos/gh_pert_em.dat' GH_PERT_EM(gh,em) = 0 ;
+
+*   Rendimiento de sistemas hidraulicos a sistemas inferiores
+$if exist ' ./datos/gh_sup_gh.dat'      PARAMETER GH_SUP_GH(gh,gh2)
+$if exist ' ./datos/gh_sup_gh.dat'      $include ' ./datos/gh_sup_gh.dat'
+$if not exist ' ./datos/gh_sup_gh.dat'  GH_SUP_GH(gh,gh2) = 0 ;
+
+*   Localizacion del grupo hidraulico
+$if exist ' ./datos/gh_loca_nd.dat'     PARAMETER GH_LOCA_ND(gh,nd)
+$if exist ' ./datos/gh_loca_nd.dat'     $include ' ./datos/gh_loca_nd.dat'
+$if not exist ' ./datos/gh_loca_nd.dat' GH_LOCA_ND(gh,nd) = 0 ;
+
+* Parametros de los agentes marginalistas
+*    Precio de generacion ofertado por el amv por periodo y estado
+$if exist ' ./datos/amv_oferpcio_ps.dat'        PARAMETER AMV_OFERPCIO_PS(amv,pe,st)
+$if exist ' ./datos/amv_oferpcio_ps.dat'        $include ' ./datos/amv_oferpcio_ps.dat'
+$if not exist ' ./datos/amv_oferpcio_ps.dat'    AMV_OFERPCIO_PS(amv,pe,st) = 0 ;
+
+*    Generacion ofertada por el amv por periodo y estado
+$if exist ' ./datos/amv_oferpot_ps.dat'         PARAMETER AMV_OFERPOT_PS(amv,pe,st)
+$if exist ' ./datos/amv_oferpot_ps.dat'         $include ' ./datos/amv_oferpot_ps.dat'
+$if not exist ' ./datos/amv_oferpot_ps.dat'     AMV_OFERPOT_PS(amv,pe,st) = 0 ;
+         
+*    Precio de demanda ofertado por el amc por periodo y estado
+$if exist ' ./datos/amc_oferpcio_ps.dat'        PARAMETER AMC_OFERPCIO_PS(amc,pe,st) 
+$if exist ' ./datos/amc_oferpcio_ps.dat'        $include ' ./datos/amc_oferpcio_ps.dat'
+$if not exist ' ./datos/amc_oferpcio_ps.dat'    AMC_OFERPCIO_PS(amc,pe,st)  = 0 ;
+
+*    Demanda ofertada por el amc por periodo y estado 
+$if exist ' ./datos/amc_oferpot_ps.dat'         PARAMETER AMC_OFERPOT_PS(amc,pe,st)
+$if exist ' ./datos/amc_oferpot_ps.dat'         $include ' ./datos/amc_oferpot_ps.dat'
+$if not exist ' ./datos/amc_oferpot_ps.dat'     AMC_OFERPOT_PS(amc,pe,st) = 0 ;
+
+*   Localizacion del amv
+$if exist ' ./datos/amv_loca_nd.dat'            PARAMETER AMV_LOCA_ND(amv,nd)
+$if exist ' ./datos/amv_loca_nd.dat'            $include ' ./datos/amv_loca_nd.dat'
+$if not exist ' ./datos/amv_loca_nd.dat'        AMV_LOCA_ND(amv,nd) = 0 ;
+
+*   Localizacion del amc
+$if exist ' ./datos/amc_loca_nd.dat'            PARAMETER AMC_LOCA_ND(amc,nd)
+$if exist ' ./datos/amc_loca_nd.dat'            $include ' ./datos/amc_loca_nd.dat'
+$if not exist ' ./datos/amc_loca_nd.dat'        AMC_LOCA_ND(amc,nd) = 0 ;
+        
+* Parametros de la demanda
+*    Costo de la energia no sumnistrada
+$if exist ' ./datos/dem_costoenenosum.dat'      PARAMETER DEM_COSTOENENOSUM
+$if exist ' ./datos/dem_costoenenosum.dat'      $include ' ./datos/dem_costoenenosum.dat'
+$if not exist ' ./datos/dem_costoenenosum.dat'  DEM_COSTOENENOSUM = 0 ;
+                   
+*    Ordenada en el origen de la potencia demandada en el periodo y estado
+$if exist ' ./datos/dem_ord_ps.dat'             PARAMETER DEM_ORD_PS(pe,st)
+$if exist ' ./datos/dem_ord_ps.dat'             $include ' ./datos/dem_ord_ps.dat'
+$if not exist ' ./datos/dem_ord_ps.dat'         DEM_ORD_PS(pe,st) = 0 ;
+                   
+*    Pendiente de la potencia demandada en el periodo y estado
+$if exist ' ./datos/dem_pen_ps.dat'             PARAMETER DEM_PEN_PS(pe,st)
+$if exist ' ./datos/dem_pen_ps.dat'             $include ' ./datos/dem_pen_ps.dat'
+$if not exist ' ./datos/dem_pen_ps.dat'         DEM_PEN_PS(pe,st) = 0 ;
+
+*    Demanda inelastica en el periodo y estado
+$if exist ' ./datos/dem_ine_ps.dat'             PARAMETER DEM_INE_PS(pe,st)
+$if exist ' ./datos/dem_ine_ps.dat'             $include ' ./datos/dem_ine_ps.dat'
+$if not exist ' ./datos/dem_ine_ps.dat'         DEM_INE_PS(pe,st) = 0 ;
+
+*    Ordenada en el origen de la potencia demandada en el periodo y estado
+$if exist ' ./datos/dem_ord_nps.dat'            PARAMETER DEM_ORD_NPS(nd,pe,st)
+$if exist ' ./datos/dem_ord_nps.dat'            $include ' ./datos/dem_ord_nps.dat'
+$if not exist ' ./datos/dem_ord_nps.dat'        DEM_ORD_NPS(nd,pe,st) = 0 ;
+                   
+*    Pendiente de la potencia demandada en el periodo y estado
+$if exist ' ./datos/dem_pen_nps.dat'            PARAMETER DEM_PEN_NPS(nd,pe,st)
+$if exist ' ./datos/dem_pen_nps.dat'            $include ' ./datos/dem_pen_nps.dat'
+$if not exist ' ./datos/dem_pen_nps.dat'        DEM_PEN_NPS(nd,pe,st) = 0 ;
+
+*    Demanda inelastica en el periodo y estado
+$if exist ' ./datos/dem_ine_nps.dat'            PARAMETER DEM_INE_NPS(nd,pe,st)
+$if exist ' ./datos/dem_ine_nps.dat'            $include ' ./datos/dem_ine_nps.dat'
+$if not exist ' ./datos/dem_ine_nps.dat'        DEM_INE_NPS(nd,pe,st) = 0 ;
+
+IF(OPT_RED EQ 0,
+$if exist ' ./datos/dem_ord_nps.dat'     DEM_ORD_PS(pe,st) = SUM(nd, DEM_ORD_NPS(nd,pe,st));        
+$if exist ' ./datos/dem_pen_nps.dat'     DEM_PEN_PS(pe,st) = SUM(nd, DEM_PEN_NPS(nd,pe,st));        
+$if exist ' ./datos/dem_ine_nps.dat'     DEM_INE_PS(pe,st) = SUM(nd, DEM_INE_NPS(nd,pe,st));        
+) ;

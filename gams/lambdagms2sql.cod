@@ -1,0 +1,1 @@
+execute "/Applications/GAMS/gams23.9_osx_x64_64_sfx/gdx2sqlite -i salidas.gdx -o salidas.db -fast";

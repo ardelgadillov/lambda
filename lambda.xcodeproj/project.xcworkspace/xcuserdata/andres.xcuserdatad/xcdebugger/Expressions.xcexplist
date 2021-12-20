@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "LambdaGridTable::GetValue(int, int):grid.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "m_table">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LambdaGridTable::SetTable(wxSQLite3Table const&amp;):grid.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "m_table">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LambdaDatabase::UpdateTables(wxString, wxString):database.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "list.Item(2)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LambdaFrame::EmptyDatosFolder():window.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "database::UpdateTables(wxString, wxString):database.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "tabla_idx.Item(j1)">
+            </PersistentString>
+            <PersistentString
+               value = "label_tabla_idx.Item(j1).m_impl">
+            </PersistentString>
+            <PersistentString
+               value = "label_tabla_idx.Item(j).m_impl">
+            </PersistentString>
+            <PersistentString
+               value = "sqlcom">
+            </PersistentString>
+            <PersistentString
+               value = "tabla_idx.Item(j)">
+            </PersistentString>
+            <PersistentString
+               value = "m_tables.Item(i).m_impl">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LambdaGridTable::SetTable(wxSQLite3Table*):grid.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "m_table">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LambdaFrame::CreateTree():window.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "m_database-&gt;m_tablesTree_Periods_spanish.Item(j)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LambdaFrame::LambdaFrame(wxWindow*, int, wxString const&amp;, wxPoint const&amp;, wxSize const&amp;, long):window.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "m_database">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "database::Label(wxString):database.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "m_col_name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "database::CreateTables():database.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "m_numberidx.Item(i)">
+            </PersistentString>
+            <PersistentString
+               value = "m_tables.Item(i)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LambdaFrame::ReadTable():window.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "table.GetColumnName(i)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LambdaFrame::EventPaste(wxCommandEvent&amp;):window.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "m_clipboard">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LambdaFrame::EventExecute(wxCommandEvent&amp;):window.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "m_databaseInput-&gt;m_tables.Item(i)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LambdaGridTable::SetData(wxSQLite3Table*):grid.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "m_data">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LambdaFrame::EventCellChange(wxGridEvent&amp;):window.cpp">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

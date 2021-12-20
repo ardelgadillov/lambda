@@ -1,0 +1,12 @@
+/
+gh1.gh_upmaxres     1000.0000
+gh1.gh_vpamxres        1.0000
+gh1.gh_rendturbom        0.7000
+gh1.gh_rini     1000.0000
+gh1.gh_rfin        1000.0000
+gh2.gh_upmaxres     1500.0000
+gh2.gh_vpamxres        1.0000
+gh2.gh_rendturbom        0.7000
+gh2.gh_rini     1000.0000
+gh2.gh_rfin        1000.0000
+/;

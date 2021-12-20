@@ -1,0 +1,358 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4126B2FA1BC7EE7C0056B595 /* lambda.gms in Resources */ = {isa = PBXBuildFile; fileRef = 4126B2F41BC7EE7C0056B595 /* lambda.gms */; };
+		4126B2FB1BC7EE7C0056B595 /* lambdadatos.cod in Resources */ = {isa = PBXBuildFile; fileRef = 4126B2F51BC7EE7C0056B595 /* lambdadatos.cod */; };
+		4126B2FC1BC7EE7C0056B595 /* lambdapresolve.cod in Resources */ = {isa = PBXBuildFile; fileRef = 4126B2F61BC7EE7C0056B595 /* lambdapresolve.cod */; };
+		4126B2FD1BC7EE7C0056B595 /* lambdasalidas.cod in Resources */ = {isa = PBXBuildFile; fileRef = 4126B2F71BC7EE7C0056B595 /* lambdasalidas.cod */; };
+		4126B2FE1BC7EE7C0056B595 /* lambdasolve.cod in Resources */ = {isa = PBXBuildFile; fileRef = 4126B2F81BC7EE7C0056B595 /* lambdasolve.cod */; };
+		4126B2FF1BC7EE7C0056B595 /* cplex.opt in Resources */ = {isa = PBXBuildFile; fileRef = 4126B2F91BC7EE7C0056B595 /* cplex.opt */; };
+		4126B3111BC836A20056B595 /* database.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4126B3081BC836A20056B595 /* database.cpp */; };
+		4126B3121BC836A20056B595 /* window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4126B30A1BC836A20056B595 /* window.cpp */; };
+		414F57B41BDFB6310034C341 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 414F57B31BDFB6310034C341 /* libsqlite3.tbd */; };
+		414F57B81BDFB7570034C341 /* databaseInput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 414F57B61BDFB7570034C341 /* databaseInput.cpp */; };
+		414F57BE1BDFBA5D0034C341 /* databaseOutput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 414F57BC1BDFBA5D0034C341 /* databaseOutput.cpp */; };
+		41979C3C1BEA8EA2009C67F2 /* icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41979C3B1BEA8EA2009C67F2 /* icon.xcassets */; };
+		41A8B49D1BA4ABB100916169 /* libwx_osx_cocoa_static_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A8B49B1BA4ABB100916169 /* libwx_osx_cocoa_static_debug.a */; };
+		41A8B49E1BA4ABB100916169 /* libwx_osx_cocoa_static_release.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A8B49C1BA4ABB100916169 /* libwx_osx_cocoa_static_release.a */; };
+		41BE66BD1BDB040600E24245 /* grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41BE66BB1BDB040600E24245 /* grid.cpp */; };
+		41F8A7E41BDC0CF0004B448E /* wxsqlite3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41F8A7DF1BDC0CF0004B448E /* wxsqlite3.cpp */; };
+		41F8A7E71BDC0FC6004B448E /* dlg_preferences.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41F8A7E51BDC0FC6004B448E /* dlg_preferences.cpp */; };
+		41F8A7EA1BDC156A004B448E /* dlg_execution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41F8A7E81BDC156A004B448E /* dlg_execution.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		405B1ACB10EF253300676938 /* Lambda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lambda.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		40735927137088070077DE1B /* Info_cocoa.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info_cocoa.plist; sourceTree = "<group>"; };
+		4126B2F41BC7EE7C0056B595 /* lambda.gms */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = lambda.gms; path = gams/lambda.gms; sourceTree = "<group>"; };
+		4126B2F51BC7EE7C0056B595 /* lambdadatos.cod */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = lambdadatos.cod; path = gams/lambdadatos.cod; sourceTree = "<group>"; };
+		4126B2F61BC7EE7C0056B595 /* lambdapresolve.cod */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = lambdapresolve.cod; path = gams/lambdapresolve.cod; sourceTree = "<group>"; };
+		4126B2F71BC7EE7C0056B595 /* lambdasalidas.cod */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = lambdasalidas.cod; path = gams/lambdasalidas.cod; sourceTree = "<group>"; };
+		4126B2F81BC7EE7C0056B595 /* lambdasolve.cod */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = lambdasolve.cod; path = gams/lambdasolve.cod; sourceTree = "<group>"; };
+		4126B2F91BC7EE7C0056B595 /* cplex.opt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = cplex.opt; path = gams/cplex.opt; sourceTree = "<group>"; };
+		4126B3071BC836A20056B595 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = constants.h; path = source/constants.h; sourceTree = "<group>"; };
+		4126B3081BC836A20056B595 /* database.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = database.cpp; path = source/database.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		4126B3091BC836A20056B595 /* database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = database.h; path = source/database.h; sourceTree = "<group>"; };
+		4126B30A1BC836A20056B595 /* window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = window.cpp; path = source/window.cpp; sourceTree = "<group>"; };
+		4126B30B1BC836A20056B595 /* window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = window.h; path = source/window.h; sourceTree = "<group>"; };
+		414F57B31BDFB6310034C341 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		414F57B61BDFB7570034C341 /* databaseInput.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = databaseInput.cpp; path = source/databaseInput.cpp; sourceTree = "<group>"; };
+		414F57B71BDFB7570034C341 /* databaseInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = databaseInput.h; path = source/databaseInput.h; sourceTree = "<group>"; };
+		414F57BC1BDFBA5D0034C341 /* databaseOutput.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = databaseOutput.cpp; path = source/databaseOutput.cpp; sourceTree = "<group>"; };
+		414F57BD1BDFBA5D0034C341 /* databaseOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = databaseOutput.h; path = source/databaseOutput.h; sourceTree = "<group>"; };
+		41979C3B1BEA8EA2009C67F2 /* icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = icon.xcassets; path = static/icon.xcassets; sourceTree = "<group>"; };
+		41A8B4171BA49B9000916169 /* wxcocoa.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = wxcocoa.xcconfig; sourceTree = "<group>"; };
+		41A8B4181BA49B9000916169 /* wxdebug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = wxdebug.xcconfig; sourceTree = "<group>"; };
+		41A8B4191BA49B9000916169 /* wxrelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = wxrelease.xcconfig; sourceTree = "<group>"; };
+		41A8B49B1BA4ABB100916169 /* libwx_osx_cocoa_static_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libwx_osx_cocoa_static_debug.a; path = "../../wxWidgets-3.0.2/lib_osx/libwx_osx_cocoa_static_debug.a"; sourceTree = "<group>"; };
+		41A8B49C1BA4ABB100916169 /* libwx_osx_cocoa_static_release.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libwx_osx_cocoa_static_release.a; path = "../../wxWidgets-3.0.2/lib_osx/libwx_osx_cocoa_static_release.a"; sourceTree = "<group>"; };
+		41BE66BB1BDB040600E24245 /* grid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = grid.cpp; path = source/grid.cpp; sourceTree = "<group>"; };
+		41BE66BC1BDB040600E24245 /* grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = grid.h; path = source/grid.h; sourceTree = "<group>"; };
+		41F8A7DF1BDC0CF0004B448E /* wxsqlite3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = wxsqlite3.cpp; path = source/wxsqlite3.cpp; sourceTree = "<group>"; };
+		41F8A7E01BDC0CF0004B448E /* wxsqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = wxsqlite3.h; path = source/wxsqlite3.h; sourceTree = "<group>"; };
+		41F8A7E11BDC0CF0004B448E /* wxsqlite3def.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = wxsqlite3def.h; path = source/wxsqlite3def.h; sourceTree = "<group>"; };
+		41F8A7E21BDC0CF0004B448E /* wxsqlite3dyn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = wxsqlite3dyn.h; path = source/wxsqlite3dyn.h; sourceTree = "<group>"; };
+		41F8A7E31BDC0CF0004B448E /* wxsqlite3opt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = wxsqlite3opt.h; path = source/wxsqlite3opt.h; sourceTree = "<group>"; };
+		41F8A7E51BDC0FC6004B448E /* dlg_preferences.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dlg_preferences.cpp; path = source/dlg_preferences.cpp; sourceTree = "<group>"; };
+		41F8A7E61BDC0FC6004B448E /* dlg_preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dlg_preferences.h; path = source/dlg_preferences.h; sourceTree = "<group>"; };
+		41F8A7E81BDC156A004B448E /* dlg_execution.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dlg_execution.cpp; path = source/dlg_execution.cpp; sourceTree = "<group>"; };
+		41F8A7E91BDC156A004B448E /* dlg_execution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dlg_execution.h; path = source/dlg_execution.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		405B1AC410EF253300676938 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				414F57B41BDFB6310034C341 /* libsqlite3.tbd in Frameworks */,
+				41A8B49D1BA4ABB100916169 /* libwx_osx_cocoa_static_debug.a in Frameworks */,
+				41A8B49E1BA4ABB100916169 /* libwx_osx_cocoa_static_release.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				405B1ACB10EF253300676938 /* Lambda.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* minimal_cocoa */ = {
+			isa = PBXGroup;
+			children = (
+				41979C3B1BEA8EA2009C67F2 /* icon.xcassets */,
+				4126B3001BC7EE840056B595 /* gams */,
+				41A8B41A1BA49C0A00916169 /* Libraries */,
+				405B1A9710EF227D00676938 /* src */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = minimal_cocoa;
+			sourceTree = "<group>";
+		};
+		405B1A9710EF227D00676938 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				414F57B51BDFB6F70034C341 /* wxsqlite3 */,
+				41F8A7ED1BDC15D8004B448E /* source */,
+				41F8A7EB1BDC15C5004B448E /* header */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		4126B3001BC7EE840056B595 /* gams */ = {
+			isa = PBXGroup;
+			children = (
+				4126B2F41BC7EE7C0056B595 /* lambda.gms */,
+				4126B2F51BC7EE7C0056B595 /* lambdadatos.cod */,
+				4126B2F61BC7EE7C0056B595 /* lambdapresolve.cod */,
+				4126B2F71BC7EE7C0056B595 /* lambdasalidas.cod */,
+				4126B2F81BC7EE7C0056B595 /* lambdasolve.cod */,
+				4126B2F91BC7EE7C0056B595 /* cplex.opt */,
+			);
+			name = gams;
+			sourceTree = "<group>";
+		};
+		414F57B51BDFB6F70034C341 /* wxsqlite3 */ = {
+			isa = PBXGroup;
+			children = (
+				41F8A7DF1BDC0CF0004B448E /* wxsqlite3.cpp */,
+				41F8A7E01BDC0CF0004B448E /* wxsqlite3.h */,
+				41F8A7E11BDC0CF0004B448E /* wxsqlite3def.h */,
+				41F8A7E21BDC0CF0004B448E /* wxsqlite3dyn.h */,
+				41F8A7E31BDC0CF0004B448E /* wxsqlite3opt.h */,
+			);
+			name = wxsqlite3;
+			sourceTree = "<group>";
+		};
+		41A8B41A1BA49C0A00916169 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				414F57B31BDFB6310034C341 /* libsqlite3.tbd */,
+				41A8B49B1BA4ABB100916169 /* libwx_osx_cocoa_static_debug.a */,
+				41A8B49C1BA4ABB100916169 /* libwx_osx_cocoa_static_release.a */,
+				41A8B4171BA49B9000916169 /* wxcocoa.xcconfig */,
+				41A8B4181BA49B9000916169 /* wxdebug.xcconfig */,
+				41A8B4191BA49B9000916169 /* wxrelease.xcconfig */,
+				40735927137088070077DE1B /* Info_cocoa.plist */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		41F8A7EB1BDC15C5004B448E /* header */ = {
+			isa = PBXGroup;
+			children = (
+				4126B3071BC836A20056B595 /* constants.h */,
+				4126B3091BC836A20056B595 /* database.h */,
+				414F57B71BDFB7570034C341 /* databaseInput.h */,
+				414F57BD1BDFBA5D0034C341 /* databaseOutput.h */,
+				41F8A7E91BDC156A004B448E /* dlg_execution.h */,
+				41F8A7E61BDC0FC6004B448E /* dlg_preferences.h */,
+				41BE66BC1BDB040600E24245 /* grid.h */,
+				4126B30B1BC836A20056B595 /* window.h */,
+			);
+			name = header;
+			sourceTree = "<group>";
+		};
+		41F8A7ED1BDC15D8004B448E /* source */ = {
+			isa = PBXGroup;
+			children = (
+				4126B3081BC836A20056B595 /* database.cpp */,
+				414F57B61BDFB7570034C341 /* databaseInput.cpp */,
+				414F57BC1BDFBA5D0034C341 /* databaseOutput.cpp */,
+				41F8A7E81BDC156A004B448E /* dlg_execution.cpp */,
+				41F8A7E51BDC0FC6004B448E /* dlg_preferences.cpp */,
+				41BE66BB1BDB040600E24245 /* grid.cpp */,
+				4126B30A1BC836A20056B595 /* window.cpp */,
+			);
+			name = source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		405B1ABF10EF253300676938 /* static */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 405B1AC810EF253300676938 /* Build configuration list for PBXNativeTarget "static" */;
+			buildPhases = (
+				405B1AC210EF253300676938 /* Sources */,
+				405B1AC410EF253300676938 /* Frameworks */,
+				4126B2E61BC7EC980056B595 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = static;
+			productInstallPath = "$(HOME)/Applications";
+			productName = minimal_cocoa;
+			productReference = 405B1ACB10EF253300676938 /* Lambda.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				KnownAssetTags = (
+					lambda.gms,
+				);
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "lambda" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				Base,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* minimal_cocoa */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				405B1ABF10EF253300676938 /* static */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4126B2E61BC7EC980056B595 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4126B2FF1BC7EE7C0056B595 /* cplex.opt in Resources */,
+				41979C3C1BEA8EA2009C67F2 /* icon.xcassets in Resources */,
+				4126B2FA1BC7EE7C0056B595 /* lambda.gms in Resources */,
+				4126B2FE1BC7EE7C0056B595 /* lambdasolve.cod in Resources */,
+				4126B2FC1BC7EE7C0056B595 /* lambdapresolve.cod in Resources */,
+				4126B2FB1BC7EE7C0056B595 /* lambdadatos.cod in Resources */,
+				4126B2FD1BC7EE7C0056B595 /* lambdasalidas.cod in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		405B1AC210EF253300676938 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4126B3111BC836A20056B595 /* database.cpp in Sources */,
+				414F57BE1BDFBA5D0034C341 /* databaseOutput.cpp in Sources */,
+				414F57B81BDFB7570034C341 /* databaseInput.cpp in Sources */,
+				4126B3121BC836A20056B595 /* window.cpp in Sources */,
+				41F8A7EA1BDC156A004B448E /* dlg_execution.cpp in Sources */,
+				41F8A7E41BDC0CF0004B448E /* wxsqlite3.cpp in Sources */,
+				41BE66BD1BDB040600E24245 /* grid.cpp in Sources */,
+				41F8A7E71BDC0FC6004B448E /* dlg_preferences.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		405B1AC910EF253300676938 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41A8B4171BA49B9000916169 /* wxcocoa.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/andres/wxWidgets-3.0.2/lib_osx",
+				);
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-lz",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = Lambda;
+				SDKROOT = macosx;
+				WXROOT = "/Users/andres/wxWidgets-3.0.2";
+			};
+			name = Debug;
+		};
+		405B1ACA10EF253300676938 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41A8B4171BA49B9000916169 /* wxcocoa.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/andres/wxWidgets-3.0.2/lib_osx",
+				);
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-lz",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = Lambda;
+				SDKROOT = macosx;
+				WXROOT = "/Users/andres/wxWidgets-3.0.2";
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41A8B4181BA49B9000916169 /* wxdebug.xcconfig */;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_FILE = Info_cocoa.plist;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = Lambda;
+				WXROOT = "$(PROJECT_DIR)/../..";
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41A8B4191BA49B9000916169 /* wxrelease.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = Info_cocoa.plist;
+				PRODUCT_NAME = Lambda;
+				WXROOT = "$(PROJECT_DIR)/../..";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		405B1AC810EF253300676938 /* Build configuration list for PBXNativeTarget "static" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				405B1AC910EF253300676938 /* Debug */,
+				405B1ACA10EF253300676938 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "lambda" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
